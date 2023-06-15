@@ -29,10 +29,10 @@ dataLayer.push({
     site_country: '<site_country>', // REQUIRED | string | ex us, au, is, jp
     site_region: '<site_region>', // REQUIRED | string | ex. EMEA
     site_section: '<site_section>', // REQUIRED | string | ex. products
-    user_login_state: '<user_login_state>' // REQUIRED, if applicable | string | ex. authenticate, anonymous 
+    user_login_state: '<user_login_state>' // REQUIRED | string | ex. authenticated, anonymous 
   },
   user_data: {
-    user_id: '<user_id>' // REQUIRED, if applicable | string | ex. 12345
+    user_id: '<user_id>' // REQUIRED, if user is logged in | string | ex. 12345
   }
 });
 ```
