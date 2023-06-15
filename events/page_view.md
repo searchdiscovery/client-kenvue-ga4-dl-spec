@@ -19,14 +19,11 @@ dataLayer.push({ page_data: null, user_data: null });  // Clear the previous att
 dataLayer.push({
   event: 'page_view',
   page_data: {
-    language: '<language>', // REQUIRED | string | ex. en
     page_category: '<category>', // recommended | string | ex. sun protection
     page_subcategory: '<page_subcategory>', // recommended | string | ex. waterproof
     page_id: '<page_id>', // recommended | string | ex. 12345
     page_location: '<page_location>', // REQUIRED | string | ex. https://www.example.com
     page_name: '<page_name>', // recommended | string | ex. homepage, search results, product:sample
-    page_referrer: '<page_referrer>', // REQUIRED | string | ex. https://www.example.com
-    page_title: '<page_title>', // REQUIRED | string | ex. homepage, search results, product:sample
     page_type: '<page_type>', // recommended | string | ex. article, blog, homepage, product
     site_brand: '<site_brand>', // REQUIRED | string | ex. neutrogena
     site_country: '<site_country>', // REQUIRED | string | ex us, au, is, jp
@@ -46,14 +43,11 @@ dataLayer.push({
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |site_brand|string|required|The brand the site is associated with.|neutrogena|
 |site_country|string|required|The country the site is associated with.|us|
-|language|string|required|The language of the current page, usually pulled from the `<html>` tag `lang` attribute.|en|
 |page_category|string|recommended|Used for grouping pages (or screens) into categories based on their content. Most often aligns with page tags/taxonomy terms or breadcrumbs.|sun protection|
 |page_subcategory|string|recommended|Used for grouping pages (or screens) into subcategories based on their content. Most often aligns with page tags/taxonomy terms or breadcrumbs.|waterproof|
 |page_id|string|recommended|A durable identifier for a page that will enable measurement over time despite the page URL, title, etc changing. Generally sourced from the site content management system.|12345|
 |page_location|string|required|The url of the page currently being viewed.|https://www.neutrogena.com|
 |page_name|string|recommended|A unique name for this page independent of page title. Google does not tend to use custom page names, but it's a mainstay in Adobe and therefore is included here for compatibility as well as for its usefulness generally.|homepage,search results,product:neutrogena hydro boost gel|
-|page_referrer|string|required|The previous page URL, generally available in `document.referrer`|https://www.neutrogena.com|
-|page_title|string|required|The title of the page currently being viewed, generally available in the HTML `<title>` tag; alternatively, the low-level, client-defined name of the page currently being viewed.|homepage,search results,product:neutrogena hydro boost gel|
 |page_type|string|recommended|Used for grouping pages (or screens) into high level types.|article,blog,homepage,product|
 |site_region|string|required|The region the site is associated with.|EMEA|
 |site_section|string|recommended|The section of the site that the current page resides in.|products|
