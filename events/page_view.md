@@ -41,15 +41,15 @@ dataLayer.push({
 
 |Field|Type|Required|Description|Example|Max Length|
 | --- | --- | --- | --- | --- | --- |
-|site_brand|string|required|The brand the site is associated with.|neutrogena|
-|site_country|string|required|The country the site is associated with.|us|
-|page_category|string|required|Used for grouping pages (or screens) into categories based on their content. Most often aligns with page tags/taxonomy terms or breadcrumbs.|sun protection|
-|page_subcategory|string|recommended|Used for grouping pages (or screens) into subcategories based on their content. Most often aligns with page tags/taxonomy terms or breadcrumbs.|waterproof|
-|page_id|string|required|A durable identifier for a page that will enable measurement over time despite the page URL, title, etc changing. Generally sourced from the site content management system.|12345|
-|page_location|string|required|The url of the page currently being viewed.|https://www.neutrogena.com|
-|page_name|string|required|A unique name for this page independent of page title. Google does not tend to use custom page names, but it's a mainstay in Adobe and therefore is included here for compatibility as well as for its usefulness generally.|homepage,search results,product:neutrogena hydro boost gel|
-|page_type|string|required|Used for grouping pages (or screens) into high level types.|article,blog,homepage,product|
-|site_region|string|required|The region the site is associated with.|EMEA|
-|site_section|string|required|The section of the site that the current page resides in.|products|
-|user_id|string|contextual|The id of the user currently logged in to the site, if the site offers authentication and the user is authenticated.|123456|
-|user_login_state|string|required|Set on all events with the authentication status of the visitor.|authenticated, anonymous|
+|site_brand|string|required|The brand the site is associated with.|neutrogena|100|
+|site_country|string|required|The country the site is associated with.|us|100|
+|page_category|string|required|Used for grouping pages (or screens) into categories based on their content. Most often aligns with page tags/taxonomy terms or breadcrumbs.|sun protection|100|
+|page_subcategory|string|recommended|Used for grouping pages (or screens) into subcategories based on their content. Most often aligns with page tags/taxonomy terms or breadcrumbs.|waterproof|100|
+|page_id|string|required|A durable identifier for a page that will enable measurement over time despite the page URL, title, etc changing. Generally sourced from the site content management system.|12345|100|
+|page_location|string|required|The url of the page currently being viewed.|https://www.neutrogena.com|100|
+|page_name|string|required|A unique name for this page independent of page title. Google does not tend to use custom page names, but it's a mainstay in Adobe and therefore is included here for compatibility as well as for its usefulness generally.|homepage,search results,product:neutrogena hydro boost gel|100|
+|page_type|string|required|Used for grouping pages (or screens) into high level types.|article,blog,homepage,product|100|
+|site_region|string|required|The region the site is associated with.|EMEA|100|
+|site_section|string|required|The section of the site that the current page resides in.|products|100|
+|user_id|string|contextual|The id of the user currently logged in to the site, if the site offers authentication and the user is authenticated.|123456|100|
+|user_login_state|string|required|Set on all events with the authentication status of the visitor.|authenticated, anonymous|100|
