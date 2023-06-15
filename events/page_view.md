@@ -22,7 +22,6 @@ dataLayer.push({
     page_category: '<category>', // REQUIRED | string | ex. sun protection
     page_subcategory: '<page_subcategory>', // recommended | string | ex. waterproof
     page_id: '<page_id>', // REQUIRED | string | ex. 12345
-    page_location: '<page_location>', // REQUIRED | string | ex. https://www.example.com
     page_name: '<page_name>', // REQUIRED | string | ex. homepage, search results, product:sample
     page_type: '<page_type>', // REQUIRED | string | ex. article, blog, homepage, product
     site_brand: '<site_brand>', // REQUIRED | string | ex. neutrogena
@@ -46,7 +45,6 @@ dataLayer.push({
 |page_category|string|required|Used for grouping pages (or screens) into categories based on their content. Most often aligns with page tags/taxonomy terms or breadcrumbs.|sun protection|100|
 |page_subcategory|string|recommended|Used for grouping pages (or screens) into subcategories based on their content. Most often aligns with page tags/taxonomy terms or breadcrumbs.|waterproof|100|
 |page_id|string|required|A durable identifier for a page that will enable measurement over time despite the page URL, title, etc changing. Generally sourced from the site content management system.|12345|100|
-|page_location|string|required|The url of the page currently being viewed.|https://www.neutrogena.com|420|
 |page_name|string|required|A unique name for this page independent of page title. Google does not tend to use custom page names, but it's a mainstay in Adobe and therefore is included here for compatibility as well as for its usefulness generally.|homepage,search results,product:neutrogena hydro boost gel|100|
 |page_type|string|required|Used for grouping pages (or screens) into high level types.|article,blog,homepage,product|100|
 |site_region|string|required|The region the site is associated with.|EMEA|100|
