@@ -52,4 +52,4 @@ dataLayer.push({
 |site_region|string|required|The region the site is associated with.|EMEA|
 |site_section|string|required|The section of the site that the current page resides in.|products|
 |user_id|string|contextual|The id of the user currently logged in to the site, if the site offers authentication and the user is authenticated.|123456|
-|user_login_state|string|contextual|Set on all events with the authentication status of the visitor.|authenticated, anonymous|
+|user_login_state|string|required|Set on all events with the authentication status of the visitor.|authenticated, anonymous|
