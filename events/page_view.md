@@ -39,8 +39,8 @@ dataLayer.push({
 
 ## Variable Definitions
 
-|Field|Type|Required|Description|Example|Pattern|Min Length|Max Length|Minimum|Maximum|Multiple Of|
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|Field|Type|Required|Description|Example|Max Length|
+| --- | --- | --- | --- | --- | --- |
 |site_brand|string|required|The brand the site is associated with.|neutrogena|
 |site_country|string|required|The country the site is associated with.|us|
 |page_category|string|required|Used for grouping pages (or screens) into categories based on their content. Most often aligns with page tags/taxonomy terms or breadcrumbs.|sun protection|
