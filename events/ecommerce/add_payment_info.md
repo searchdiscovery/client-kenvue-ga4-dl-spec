@@ -31,4 +31,4 @@ dataLayer.push({
 |currency|string|required|Currency of the items associated with the event, in 3-letter ISO 4217 format.|`USD`|`^[A-Z]{3}$`|`3`|`3`|
 |items|array of [items](/schemas/item.md)|required|Populate with item objects that represent the product(s) currently in the cart during the checkout process.|`[{item_id: "test"}]`|
 |payment_method|string|required|The chosen method of payment.|`credit_card`|`^[a-z_]+$`||100|
-|value|number|required|The monetary value of the event.|`7.77`|`^\d\.\d\d$`||`100`|`0.00`|
+|value|number|required|The monetary value of the event. Does not include currency sign.|`7.77`|`^\d\.\d\d$`||`100`|`0.00`|
