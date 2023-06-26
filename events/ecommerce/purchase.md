@@ -7,6 +7,8 @@ Fire whenever a user purchases one or more items. The Google Analytics 4 schema 
 - Items (items)
 - Value (value)
 
+If any of the above parameters are not present, the transaction will _**NOT**_ be recognized by Google Analytics 4, which can result in no ecommerce information being processed. 
+
 ## Javascript Code
 
 ```js
