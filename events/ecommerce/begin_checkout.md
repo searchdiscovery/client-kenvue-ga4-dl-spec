@@ -1,9 +1,9 @@
 # Begin Checkout
 
 Fire whenever a user begins a checkout. This event is not the same as the ecommerce event "[View Cart](/events/ecommerce/view_cart.md)". This event will fire once the user initiates the checkout funnel. Examples of where the "begin_checkout" event should fire are (but only ONCE during checkout and will be the FIRST thing that fires):
-- The user views the form to fill out shipping information
-- The user views the form to fill out payment information
-- the user view the screen to either log in or create an account to proceed with their checkout
+- The user views the _**INITIAL**_ form to fill out shipping information
+- The user views the _**INITIAL**_ form to fill out payment information
+- the user view the _**INITIAL**_ screen to either log in or create an account to proceed with their checkout
 
 
 ## Javascript Code
