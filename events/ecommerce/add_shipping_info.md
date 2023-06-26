@@ -22,7 +22,7 @@ dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
 dataLayer.push({
   event: "add_shipping_info",
   ecommerce: {
-    coupon: "<coupon>", // contextual | string | ex. SUMMER_FUN | pattern: ^[A-Za-z0-9_]+$
+    coupon: "<coupon>", // contextual | string | ex. SUMMER_FUN
     currency: "<currency>", // REQUIRED | string | ex. USD | pattern: ^[A-Z]{3}$ | min. 3, max. 3
     items: "<items>", // REQUIRED | array | ex. [{item_id: "test"}]	
     shipping_tier: "<shipping_tier>", // contextual | string | ex. ground | pattern: ^[a-z_]+$
@@ -39,4 +39,4 @@ dataLayer.push({
 |currency|string|required|Currency of the items associated with the event, in 3-letter ISO 4217 format.|`USD`|`^[A-Z]{3}$`|`3`|`3`|
 |items|array of [items](/schemas/item.md)|required|Populate with item objects that represent the product(s) currently in the cart during the checkout process.|`[{item_id: "test"}]`|
 |shipping_tier|string|contextual|The shipping method selected for delivery of the purchased item(s).|`ground`|`^[a-z_]+$`||`100`|
-|value|number|required|The monetary value of the event. Does not include currency sign.|`7.77`|`^\d\.\d\d$`||`100`|`0.00`|
+|value|number|required|The monetary value of the event. Does not include currency sign.|`7.77`|||`100`|`0.00`|
