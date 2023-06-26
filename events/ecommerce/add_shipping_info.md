@@ -1,6 +1,14 @@
 # Add Shipping Info
 
-Fire whenever a user submits their shipping information.
+Fire whenever a user submits their shipping information. This event will fire _**AFTER**_ the user has successfully completed the "Add Shipping Info" step and has done the following:
+
+1. Shipping info has populated all required shipping fields.
+2. The user has selected to move on to the next step (e.g. payment info, order review, etc.).
+3. The system has successfully verified the shipping info and moves the user from the shipping step to the following step.
+
+Pairs with the following events:
+- [Begin Checkout](/events/ecommerce/begin_checkout.md)
+- [Add Payment Info](/events/ecommerce/add_payment_info.md)
 
 ## Javascript Code
 
