@@ -1,8 +1,12 @@
 # View Item
 
-Fire whenever a user visits a product detail page.
+Fire whenever a user visits a product detail page/screen.
 
-This event will eventually fully replace the "Product Viewed" event currently being sent on product detail pages. For now, we'd like to have both implemented so the changeover is simple when it's time to do so. Given that, this is a relatively low priority event to implement.
+This event is to fire when a user is presented with a _**HIGHLY DETAILED**_ page/screen, which includes (but is not limited to):
+- A web Page
+- after clicking "more details" on an item and an on-page window opens up and displays a product detail screen overlaying the previous screen
+
+If a page/screen is providing the user with detailed information, the user can add a product to their cart, and navigate to their cart with a product added, then it is highly likely that this page/screen is a product detail page/screen
 
 ## Javascript Code
 
@@ -16,17 +20,17 @@ dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
 dataLayer.push({
   event: "view_item",
   ecommerce: {
-    currency: "<currency>", // recommended | string | ex. USD | pattern: ^[A-Z]{3}$ | min. 3, max. 3
+    currency: "<currency>", // REQUIRED | string | ex. USD | pattern: ^[A-Z]{3}$ | min. 3, max. 3
     items: "<items>", // REQUIRED | array | ex. [{item_id: "test"}]
-    value: "<value>" // recommended | number | ex. 7.77 | pattern: ^\d\.\d\d$	| min. 0.00
+    value: "<value>" // REQUIRED | number | ex. 7.77 | pattern: ^\d\.\d\d$ | min. 0.00
   }
 });
 ```
 
 ## Variable Definitions
 
-|Field|Type|Required|Description|Example|Pattern|Min Length|Max Length|Minimum|Maximum|Multiple Of|
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-|currency|string|recommended|Currency of the items associated with the event, in 3-letter ISO 4217 format.|USD|^[A-Z]{3}$|3|3|
-|items|array of [items](/schemas/item.md)|required|Populate with item objects that represent the product viewed.|[{item_id: "test"}]
-|value|number|recommended|The monetary value of the event.|7.77|^\d\.\d\d$|||0.00|
+|Field|Type|Required|Description|Example|Pattern|Minimum Length|Maximum Length|Minimum|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|currency|string|recommended|Currency of the items associated with the event, in 3-letter ISO 4217 format.|`USD`|`^[A-Z]{3}$`|`3`|`3`|
+|items|array of [items](/schemas/item.md)|required|Populate with item objects that represent the product viewed.|`[{item_id: "test"}]`
+|value|number|recommended|The monetary value of the event. Does not include currency sign.|`7.77`|`^\d\.\d\d$`||`100`|`0.00`|
