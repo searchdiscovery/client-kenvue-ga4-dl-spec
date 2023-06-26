@@ -34,7 +34,6 @@ dataLayer.push({
     shipping: "<shipping>", // REQUIRED | number | ex. 3.33 | pattern: ^\d\.\d\d$	| min. 0.00
     tax: "<tax>", // REQUIRED | number | ex. 1.11 | pattern: ^\d\.\d\d$	| min. 0.00
     transaction_id: "<transaction_id>", // REQUIRED | string | ex. T12345
-    quantity: "<quantity>", // REQUIRED | number | ex. 3
     value: "<value>" // REQUIRED | number | ex. 7.77 | pattern: ^\d\.\d\d$ | min. 0.00
   }
 });
@@ -51,5 +50,4 @@ dataLayer.push({
 |shipping|number|required|Shipping cost associated with a transaction. Does not include currency sign.|`3.33`|`^\d\.\d\d$`||`100`|`0.00`|
 |tax|number|required|Tax cost associated with a transaction. Does not include currency sign.|`1.11`|`^\d\.\d\d$`||`100`|`0.00`|
 |transaction_id|string|required|The unique identifier of a transaction.|`T12345`|||`100`|
-|quantity|number|required|the number of items.||||`100`
 |value|number|required|The monetary value of the event. Does not include currency sign.|`7.77`|`^\d\.\d\d$`||`100`|`0.00`|
