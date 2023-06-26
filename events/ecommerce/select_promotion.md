@@ -2,7 +2,7 @@
 
 Fire whenever a user clicks on a promotion link located in a component that forwards the user to a promotional page or an item/product. Component types include cards, carousels, search, promotions, home screen hero images, and similar components. A promotion is usually a temporary presentation of information that is different than displaying a dynamic list which would normally send a [View Item List](/events/ecommerce/view_item_list.md).
 
-The most common use case of the "select_promotion" is a hero image that is displayed on the home page of a brand site as this is most commonly a promotion space that will drive a user to a product or product list.
+The most common use case of the "select_promotion" event is a hero image that is displayed on the home page of a brand site as this is most commonly a promotion space that will drive a user to a product or product list.
 
 ## Javascript Code
 
