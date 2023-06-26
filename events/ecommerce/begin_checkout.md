@@ -5,6 +5,9 @@ Fire whenever a user begins a checkout. This event is not the same as the ecomme
 - The user views the _**INITIAL**_ form to fill out payment information
 - the user view the _**INITIAL**_ screen to either log in or create an account to proceed with their checkout
 
+Pairs with the following events:
+- [Add Payment Info](/events/ecommerce/add_payment_info.md)
+- [Add Shipping Info](/events/ecommerce/add_shipping_info.md)
 
 ## Javascript Code
 
