@@ -33,10 +33,10 @@ dataLayer.push({
 
 ## Variable Definitions
 
-|Field|Type|Required|Description|Example|Pattern|Minimum Length|Maximum Length|
-| --- | --- | --- | --- | --- | --- | --- | --- |
+|Field|Type|Required|Description|Example|Pattern|Minimum Length|Maximum Length|Minimum|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |coupon|string|contextual|The coupon name/code associated with the event. Event-level and item-level coupon parameters are independent.|`SUMMER_FUN`|||`100`|
 |currency|string|required|Currency of the items associated with the event, in 3-letter ISO 4217 format.|`USD`|`^[A-Z]{3}$`|`3`|`3`|
 |items|array of [items](/schemas/item.md)|required|Populate with item objects that represent the product(s) currently in the cart during the checkout process.|`[{item_id: "test"}]`|
-|shipping_tier|string|contextual|The shipping method selected for delivery of the purchased item(s).|`ground`|`^[a-z_]+$`||`100`|
-|value|number|required|The monetary value of the event. Does not include currency sign.|`7.77`|||`100`|`0.00`|
+|shipping_tier|string|contextual|The shipping method selected for delivery of the purchased item(s).|`ground`|||`100`|
+|value|number|required|The monetary value of the event. Does not include currency sign.|`7.77`|`^\d\.\d\d$`||`100`|`0.00`|
