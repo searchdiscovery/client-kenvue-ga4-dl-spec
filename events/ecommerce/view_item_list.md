@@ -1,4 +1,4 @@
-# View Item (Product) List
+# View Item List
 
 Fire whenever a user sees multiple product links in a list that forward the user to the product detail page. 
 
