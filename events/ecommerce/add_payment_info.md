@@ -1,6 +1,14 @@
 # Add Payment Info
 
-Fire whenever a user submits their payment information. 
+Fire whenever a user submits their payment information. This event will fire _**AFTER**_ the user has successfully completed the "Add Payment Info" step and has done the following:
+
+1. Payment info has populated all required payment fields.
+2. The user has selected to move on to the next step (e.g. shipping info, order review, etc.).
+3. The system has successfully verified the payment info and moves the user from the payment step to the following step.
+
+Pairs with the following events:
+- [Begin Checkout](/events/ecommerce/begin_checkout.md)
+- [Add Shipping Info](/events/ecommerce/add_shipping_info.md)
 
 ## Javascript Code
 
