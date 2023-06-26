@@ -26,5 +26,5 @@ dataLayer.push({
 |Field|Type|Required|Description|Example|Pattern|Minimum Length|Maximum Length|Minimum|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 |currency|string|required|Currency of the items associated with the event, in 3-letter ISO 4217 format.|`USD`|`^[A-Z]{3}$`|`3`|`3`|
-|items|array of [items](/schemas/item.md)|required|Populate with item objects that represent the product(s) added to the wishlist.|`[{item_id: "test"}]`|||`100`|
+|items|array of [items](/schemas/item.md)|required|Populate with item objects that represent the product(s) added to the wishlist.|`[{item_id: "test"}]`|
 |value|number|required|The monetary value of the event. Does not include currency sign.|`7.77`|`^\d\.\d\d$`||`100`|`0.00`|
