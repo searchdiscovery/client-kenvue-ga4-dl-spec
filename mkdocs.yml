@@ -23,4 +23,6 @@ markdown_extensions:
   - pymdownx.superfences
 plugins:
   - git-revision-date
+  - encryptcontent:
+      global_password: 'kenvue2023' # TODO: switch to environment variable
 dev_addr: '0.0.0.0:8080'
