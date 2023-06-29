@@ -13,6 +13,7 @@ theme:
     - navigation.tabs
     - navigation.expand
     - navigation.top
+    - navigation.path
 markdown_extensions:
   - admonition
   - meta
