@@ -35,4 +35,4 @@ dataLayer.push({
 |creative_slot|string|required|The name of the promotional creative slot associated with the event. Ignored if set at the item-level.|`featured_hero_splash_1`|`100`|
 |promotion_id|string|required|The ID of the promotion associated with the event. Ignored if set at the item-level.|`P_12345`|`100`|
 |promotion_name|string|required|The name of the promotion associated with the event. Ignored if set at the item-level.|`summer_sale_2023`|`100`|
-|items|array of [items](/schemas/item.md)|required|Populate with item objects that represent the product viewed.|`[{item_id: "test"}]`|
+|items|array of [items](/docs/schemas/item.md)|required|Populate with item objects that represent the product viewed.|`[{item_id: "test"}]`|
