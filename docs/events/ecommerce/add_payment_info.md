@@ -7,7 +7,7 @@ Fire whenever a user submits their payment information. This event will fire _**
 3. The system has successfully verified the payment info and moves the user from the payment step to the following step.
 
 Pairs with the following events:
-- [Begin Checkout](/events/ecommerce/begin_checkout.md)
+- [Begin Checkout](/docs/events/ecommerce/begin_checkout.md)
 - [Add Shipping Info](/events/ecommerce/add_shipping_info.md)
 
 ## Javascript Code
