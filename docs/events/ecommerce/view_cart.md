@@ -1,6 +1,6 @@
 # View Cart
 
-Fire whenever a user views their cart. This event is not the same as the ecommerce event "[Begin Checkout](/events/ecommerce/begin_checkout.md)". Unlike "[Begin Checkout](/events/ecommerce/begin_checkout.md)", the view_cart event will fire when a user is preparing to finalize their purchase, usually presented with their list of products, as well as options as to how they will proceed with checking out (e.g. normal checkout, paypal, amazon, etc). 
+Fire whenever a user views their cart. This event is not the same as the ecommerce event "[Begin Checkout](../../events/ecommerce/begin_checkout.md)". Unlike "[Begin Checkout](../../events/ecommerce/begin_checkout.md)", the view_cart event will fire when a user is preparing to finalize their purchase, usually presented with their list of products, as well as options as to how they will proceed with checking out (e.g. normal checkout, paypal, amazon, etc). 
 
 ## Javascript Code
 

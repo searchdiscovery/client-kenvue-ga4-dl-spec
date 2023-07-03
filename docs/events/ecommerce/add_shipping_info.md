@@ -7,8 +7,8 @@ Fire whenever a user submits their shipping information. This event will fire _*
 3. The system has successfully verified the shipping info and moves the user from the shipping step to the following step.
 
 Pairs with the following events:
-- [Begin Checkout](/events/ecommerce/begin_checkout.md)
-- [Add Payment Info](/events/ecommerce/add_payment_info.md)
+- [Begin Checkout](../../events/ecommerce/begin_checkout.md)
+- [Add Payment Info](../../events/ecommerce/add_payment_info.md)
 
 ## Javascript Code
 

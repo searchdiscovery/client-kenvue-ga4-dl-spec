@@ -1,10 +1,10 @@
 # View Promotion
 
-Fire whenever a user views/sees a promotion located in a component that forwards the user to a promotional page or an item/product. Component types include cards, carousels, search, promotions, home screen hero images, and similar components. A promotion is usually a temporary presentation of information that is different than clicking an item in a dynamic list which would normally send a "[Select Items](/events/ecommerce/select_item.md)".
+Fire whenever a user views/sees a promotion located in a component that forwards the user to a promotional page or an item/product. Component types include cards, carousels, search, promotions, home screen hero images, and similar components. A promotion is usually a temporary presentation of information that is different than clicking an item in a dynamic list which would normally send a "[Select Items](../../events/ecommerce/select_item.md)".
 
 The most common use case of the "view_promotion" event user views/sees the hero image that is displayed on the home page of a brand site as this is most commonly a promotion space that will drive a user to a product or product list.
 
-Pairs with "[Select Promotion](/events/ecommerce/select_promotion.md)".
+Pairs with "[Select Promotion](../../events/ecommerce/select_promotion.md)".
 
 
 ## Javascript Code

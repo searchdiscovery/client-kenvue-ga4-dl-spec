@@ -2,7 +2,7 @@
 
 Fire whenever a user clicks on a product link found in a list that forwards the user to the product detail page. List types include cards, search, promotions, and similar component.
 
-If the site is not currently able to support differentiating products from content, then add the attributes/event for **[select_content](/events/lists/select_content.md)** instead and add a dev task to update the site to enable this differentiation.
+If the site is not currently able to support differentiating products from content, then add the attributes/event for **[select_content](../../events/lists/select_content.md)** instead and add a dev task to update the site to enable this differentiation.
 
 Do not fire this event for product links found in menus.
 

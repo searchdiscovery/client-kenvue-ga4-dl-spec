@@ -13,7 +13,7 @@ The following parameters are _**100% REQUIRED**_ when implementing the refund ev
 - Currency (currency)
 - Value (value)
 
-You may notice the "[item Array](/schemas/item.md)" is not present in the _**FULL REFUND**_ events like it is the _**PARTIAL REFUND**_ event and the "[Purchase Event](/events/ecommerce/purchase.md)", this is because when performing a _**FULL REFUND**_ GA4 will assume all products have been returned.
+You may notice the "[item Array](../../schemas/item.md)" is not present in the _**FULL REFUND**_ events like it is the _**PARTIAL REFUND**_ event and the "[Purchase Event](../../events/ecommerce/purchase.md)", this is because when performing a _**FULL REFUND**_ GA4 will assume all products have been returned.
 
 ## Javascript Code
 
