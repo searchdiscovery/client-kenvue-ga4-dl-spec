@@ -33,7 +33,7 @@ dataLayer.push({
 |Field|Type|Required|Description|Example|Maximum Length|
 | --- | --- | --- | --- | --- | --- |
 |facets|delimited string|contextual|A double-delimited string of key/value pairs representing the refinements that were applied if this list is displayed using the "Filter By Group" component.|`category:skin_health\~skin_concern:acne\ ~featured_as:best_seller`|`100`|
-|items|array of [items](/schemas/item.md)|required|Populate with item objects that represent each product in the list.|`[{item_id: "test"}]`
+|items|array of [items](schemas/item.md)|required|Populate with item objects that represent each product in the list.|`[{item_id: "test"}]`
 |item_list_id|string|required|The computer-readable machine name of the list the item showed up in. Use UUID provided by the component if no more specific ID is available.|`12345abcde12345`|`100`|
 |item_list_name|string|required|The human-readable name of the list the item showed up in. If one is not available, populate with numerical index of which list this is on the page (1-indexed). For `filter_by_group` component, use that value.|`filter_by_group, recommended_products, recently_viewed_products, search_results`|`100`|
 |list_type|string|required|The type of list the item was found in.|`cards, search_results`|`100`|
