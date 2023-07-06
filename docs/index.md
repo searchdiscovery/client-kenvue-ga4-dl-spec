@@ -1,3 +1,9 @@
+---
+title: Home
+hide:
+  - navigation
+---
+
 # Kenvue Data Layer Specifications Home
 
 ## Overview
