@@ -5,7 +5,7 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   palette:
-    primary: indigo
+    primary: teal
   features:
     - content.code.annotate
     - navigation.indexes
