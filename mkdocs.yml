@@ -23,5 +23,6 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
 plugins:
+  - search
   - git-revision-date
 dev_addr: '0.0.0.0:8080'
