@@ -9,11 +9,9 @@ theme:
   features:
     - content.code.annotate
     - navigation.indexes
-    - navigation.sections
-    - navigation.tabs
-    - navigation.expand
-    - navigation.top
     - navigation.path
+    - navigation.tabs
+    - navigation.top
 markdown_extensions:
   - admonition
   - meta
