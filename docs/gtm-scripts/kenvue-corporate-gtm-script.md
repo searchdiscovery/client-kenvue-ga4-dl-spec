@@ -1,4 +1,4 @@
-# Kenvue Corporate GTM Code
+# Kenvue DXP GLobal GTM Code
 This document is a quick reference to implement the Global GTM Container across all Kenvue Corporate sites. For any questions regarding this content please contact Steven Rowe - srowe32@its.jnj.com
 
 ## HTML Code
