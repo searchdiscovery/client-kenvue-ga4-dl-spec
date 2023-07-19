@@ -1,4 +1,4 @@
-# Kenvue Corporate GTM Code
+# Kenvue DXP GLobal GTM Code
 This document is a quick reference to implement the Global GTM Container across all Kenvue Corporate sites. For any questions regarding this content please contact Steven Rowe - srowe32@its.jnj.com
 
 ## HTML Code
@@ -14,7 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 ```
 
-Additionally, add this snippet just inside the opening `<body>` tag:
+If possible, add this snippet just inside the opening `<body>` tag:
 
 ```html
 <!-- Google Tag Manager (noscript) -->
@@ -22,3 +22,8 @@ Additionally, add this snippet just inside the opening `<body>` tag:
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 ```
+
+!!! note
+    The `noscript` tag is optional and primarily used for site ownership validation through Google Search Console (there are other ways of validating site ownership).
+    If a user has JS turned off in the browser, the data layer will not work. The only GTM tags available through the iframe-loaded GTM container are custom image tags.
+    [More on the GTM noscript tag](https://www.analyticsmania.com/post/google-tag-manager-noscript/)
