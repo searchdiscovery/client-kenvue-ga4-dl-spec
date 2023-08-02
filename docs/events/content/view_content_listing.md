@@ -18,9 +18,9 @@ dataLayer.push({ event_data: null });  // Clear the previous event_data object.
 dataLayer.push({
   event: "view_content_list",
   event_data: {
-    content_list_type: "<content_type>", // recommended | string | e.g. "article_card_section", "article_list_view"
-    identifier: "<identifier>", // recommended | string | e.g. "featured_articles", "oral_care"
-    name: "<name>", // REQUIRED | string | e.g. "Featured Articles", "Oral Care"
+    list_type: "<content_type>", // recommended | string | e.g. "article_card_section", "article_list_view"
+    identifier: "<identifier>", // recommended | string | e.g. "featured_articles", "related_blog_posts"
+    name: "<name>", // REQUIRED | string | e.g. "Featured Articles", "Related Blog Posts"
   }
 });
 ```
