@@ -2,7 +2,7 @@
 
 Fire whenever a user successfully completes a survey. 
 
-This event is fired when survey input is successfully received and process. This is in contrast to [`survey_error`](survey/survey_error.md) which occurs when a submission is attempted but an error occurs and the survey input is not recieved and processed.
+This event is fired when survey input is successfully received and process. This is in contrast to [`survey_error`](../../events/survey/survey_error.md) which occurs when a submission is attempted but an error occurs and the survey input is not recieved and processed.
 
 ## Javascript Code
 
