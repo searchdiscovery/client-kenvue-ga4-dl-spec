@@ -6,6 +6,18 @@ The most common use case of the "view_promotion" event user views/sees the hero 
 
 Pairs with "[Select Promotion](../../events/ecommerce/select_promotion.md)".
 
+## HTML Data Attributes
+
+```html
+<a href="<link_url>"
+  data-layer-event="view_promotion"
+  data-layer-facets="<facets>"
+  data-layer-list_type="<list_type>"
+  data-layer-search_term="<search_term>"
+  data-layer-search_type="<search_type>"
+  data-layer-index="<index>"
+>
+```
 
 ## Javascript Code
 
