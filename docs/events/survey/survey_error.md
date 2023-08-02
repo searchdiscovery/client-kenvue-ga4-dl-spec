@@ -8,7 +8,7 @@ This is in contrast to [`complete_survey`](survey/complete_survey.md) which occu
 
 ```js
 // When:
-// User unsuccessfully completes a survey and survey input is not sucessfully received and processed. Contrasts survey_complete in which a submission is received and processed successfully. 
+// User unsuccessfully completes a survey and survey input is not successfully received and processed. Contrasts survey_complete in which a submission is received and processed successfully. 
 
 // Code:
 window.dataLayer = window.dataLayer || [];
