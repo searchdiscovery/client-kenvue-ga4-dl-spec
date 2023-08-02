@@ -42,14 +42,14 @@ dataLayer.push({ event_data: null });  // Clear the previous event_data object.
 dataLayer.push({
   event: "select_content",
   event_data: {
-    content_type: "<content_type>", // recommended | string | ex. article, blog, page	
-    facets: "<facets>", // optional | string - double delimited (:)(~) | category:skin_health~featured_as:best_seller	
-    identifier: "<identifier>", // recommended | string | ex. ecp_locator, free_trial
+    content_type: "<content_type>", // REQUIRED | string | ex. article, blog, page	
+    facets: "<facets>", // contextual | string - double delimited (:)(~) | category:skin_health~featured_as:best_seller	
+    identifier: "<identifier>", // REQUIRED | string | ex. ecp_locator, free_trial
     index: "<index>", // REQUIRED | integer | ex. 5
-    list_type: "<list_type>", // optional | string | ex. cards, search_results	
+    list_type: "<list_type>", // REQUIRED | string | ex. cards, search_results	
     name: "<name>", // REQUIRED | string | ex. purchase_product
-    search_term: "<search_term>", // optional | string | ex. sunscreen
-    search_type: "<search_type>", // optional | string | site, filter_by_group	
+    search_term: "<search_term>", // contextual | string | ex. sunscreen
+    search_type: "<search_type>", // contextual | string | site, filter_by_group	
   }
 });
 ```
@@ -58,11 +58,11 @@ dataLayer.push({
 
 |Field|Type|Required|Description|Example|Maximum Length|
 | --- | --- | --- | --- | --- | --- |
-|**content_type**|`string`|recommended|The type of content selected by the user. Use "page" if no more specific content_type applies or if the capability to distinguish between content_types does not currenly exist.|`article, blog, page`|`100`|
+|**content_type**|`string`|required|The type of content selected by the user. Use "page" if no more specific content_type applies or if the capability to distinguish between content_types does not currenly exist.|`article, blog, page`|`100`|
 |**facets**|`string`|contextual|A double-delimited string of key/value pairs representing the refinements that were applied to this search. Only set if the list type is a search result or filter_by_group.|`category:skin_health~skin_concern:acne~featured_as:best_seller`|`100`|
-|**identifier**|`string`|recommended|The form machine-readable name. This should be a unique value specific to this piece of content, if one exists. If one does not exist, this can also be populated with the same value as the <name>.|`ecp_locator, free_trial`|`100`|
-|**index**|`integer`|Yes|The numerical index of the item position (1-indexed). For instance, if this is the 5th search result, you would send 5 here. If this is the 3rd card in a single row, send 3. If this is the 2nd item in the 3rd row of a 3-up card layout, send 8 (3 + 3 + 2).|`5`|`100`|
-|**list_type**|`string`|contextual|The type of list the item was found in.|`cards, search_results`|`100`|
-|**name**|`string`|Yes|The form human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the form with. It should be lowercase snake_case.|`purchase_product`|`100`|
+|**identifier**|`string`|required|The form machine-readable name. This should be a unique value specific to this piece of content, if one exists. If one does not exist, this can also be populated with the same value as the <name>.|`ecp_locator, free_trial`|`100`|
+|**index**|`integer`|required|The numerical index of the item position (1-indexed). For instance, if this is the 5th search result, you would send 5 here. If this is the 3rd card in a single row, send 3. If this is the 2nd item in the 3rd row of a 3-up card layout, send 8 (3 + 3 + 2).|`5`|`100`|
+|**list_type**|`string`|required|The type of list the item was found in.|`cards, search_results`|`100`|
+|**name**|`string`|required|The form human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the form with. It should be lowercase snake_case.|`purchase_product`|`100`|
 |**search_term**|`string`|contextual|The final search term submitted after any correction has been performed. Only set if the `list_type` is `search_results`.|`sunscreen`|`100`|
 |**search_type**|`string`|contextual|The type of search performed. Only set if the `list_type` is `search_results`.|`site, filter_by_group`|`100`|
