@@ -2,7 +2,7 @@
 
 Fire whenever a user unsuccessfully completes a survey. 
 
-This is in contrast to [`complete_survey`](survey/complete_survey.md) which occurs when a submission succeeds.
+This is in contrast to [`complete_survey`](../../events/survey/complete_survey.md) which occurs when a submission succeeds.
 
 ## Javascript Code
 
