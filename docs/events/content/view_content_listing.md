@@ -14,7 +14,7 @@ Pairs with the following event:
 
 ```js
 // When:
-// User views an article, blog post, or other content-focused pages
+// User views a listing of articles, article cards, etc.
 
 // Code:
 window.dataLayer = window.dataLayer || [];
