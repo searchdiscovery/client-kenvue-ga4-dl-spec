@@ -12,7 +12,7 @@ This event is to be used to understand when content is being viewed without any 
 
 ```js
 // When:
-// User views an article, blog post, or other content-focused pages
+// User views an article, blog post, or other content-focused page
 
 // Code:
 window.dataLayer = window.dataLayer || [];
