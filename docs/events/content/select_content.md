@@ -6,8 +6,6 @@ title: Select Content
 
 Fire whenever a user clicks on a content link found in a list that forwards the user to the content page. List types include card collections, search results, carousels, and other similar components. 
 
-This event is to be used to understand how content is being engaged with in regard to the lists they are a part of. If you are looking to report on how much a piece of content was engaged with and want/need to know the list information, you must use "select_content"  in your GA4 report as your event and NOT "[view_content](../../events/content/view_content.md)". This is because "[view_content](../../events/content/view_content.md)" will not have associated list information.
-
 Pairs with the following event:
 - [View Content List](../../events/content/view_content_list.md)
 
