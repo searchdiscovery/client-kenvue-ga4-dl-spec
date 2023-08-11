@@ -6,7 +6,11 @@ title: View Content
 
 Fire whenever a page whose main purpose is to serve content (e.g. an article or blog post) loads.
 
-This event is to be used to understand when content is being viewed without any association to a "[Content List](../../events/content/view_content_listing.md)". If you are looking to report on how much a piece of content was engaged with and want/need to know the list information, you must use "[select_content](../../events/content/view_content_listing.md)" in your GA4 report as your event and NOT "view_content". This is because "view_content" will not have associated list information.
+This event is to be used to understand when content is being viewed without any association to a "[Content List](../../events/content/view_content_listing.md)".
+
+??? info "How this event data is used in reporting"
+    
+    If an analyst is looking to report on how often a piece of content was engaged with and wants to know the list information (as opposed to how often a content page was viewed), they would use the "[select_content](../../events/content/view_content_listing.md)" in a GA4 report (as opposed to "view_content"). This is because "view_content" will not have associated list information.
 
 ## Javascript Code
 
