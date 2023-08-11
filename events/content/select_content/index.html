@@ -2671,6 +2671,8 @@
 
 <h1 id="select-content">Select Content</h1>
 <p>Fire whenever a user clicks on a content link found in a list that forwards the user to the content page. List types include card collections, search results, carousels, and other similar components. </p>
+<p>Pairs with the following event:
+- <a href="../../events/content/view_content_list.md">View Content List</a></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do not fire this event for content links found in menus.</p>
@@ -2684,7 +2686,7 @@
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="na">data-layer-list_type</span><span class="o">=</span><span class="s">&quot;&lt;list_type&gt;&quot;</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="na">data-layer-name</span><span class="o">=</span><span class="s">&quot;&lt;name&gt;&quot;</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  <span class="na">data-layer-search_term</span><span class="o">=</span><span class="s">&quot;&lt;search_term&gt;&quot;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  <span class="na">data-layer-search_term</span><span class="o">=</span><span class="s">&quot;&lt;search_type&gt;&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  <span class="na">data-layer-search_type</span><span class="o">=</span><span class="s">&quot;&lt;search_type&gt;&quot;</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">&gt;</span>
 </code></pre></div>
 <h2 id="javascript-code">Javascript Code</h2>
@@ -2697,14 +2699,14 @@
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;select_content&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">content_type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;content_type&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. article, blog, page   </span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">facets</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;facets&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional | string - double delimited (:)(~) | category:skin_health~featured_as:best_seller   </span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;identifier&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. ecp_locator, free_trial</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">content_type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;content_type&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. article, blog, page  </span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">facets</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;facets&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string - double delimited (:)(~) | category:skin_health~featured_as:best_seller </span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;identifier&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. ecp_locator, free_trial</span>
 <a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;index&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | integer | ex. 5</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nx">list_type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;list_type&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional | string | ex. cards, search_results  </span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nx">list_type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;list_type&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. cards, search_results  </span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;name&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. purchase_product</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nx">search_term</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;search_term&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional | string | ex. sunscreen</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nx">search_type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;search_type&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional | string | site, filter_by_group  </span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nx">search_term</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;search_term&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. sunscreen</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nx">search_type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;search_type&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | site, filter_by_group    </span>
 <a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="p">});</span>
 </code></pre></div>
@@ -2717,118 +2719,73 @@
 <th>Required</th>
 <th>Description</th>
 <th>Example</th>
-<th>Pattern</th>
-<th>Min Length</th>
-<th>Max Length</th>
-<th>Minimum</th>
-<th>Maximum</th>
-<th>Multiple Of</th>
+<th>Maximum Length</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>content_type</strong></td>
 <td><code>string</code></td>
-<td>recommended</td>
+<td>required</td>
 <td>The type of content selected by the user. Use "page" if no more specific content_type applies or if the capability to distinguish between content_types does not currenly exist.</td>
-<td>article, blog, page</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>article, blog, page</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td><strong>facets</strong></td>
 <td><code>string</code></td>
 <td>contextual</td>
 <td>A double-delimited string of key/value pairs representing the refinements that were applied to this search. Only set if the list type is a search result or filter_by_group.</td>
-<td>category:skin_health~skin_concern:acne~featured_as:best_seller</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>category:skin_health~skin_concern: acne~featured_as:best_seller</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td><strong>identifier</strong></td>
 <td><code>string</code></td>
-<td>recommended</td>
+<td>required</td>
 <td>The form machine-readable name. This should be a unique value specific to this piece of content, if one exists. If one does not exist, this can also be populated with the same value as the <name>.</td>
-<td>ecp_locator, free_trial</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>ecp_locator, free_trial</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td><strong>index</strong></td>
 <td><code>integer</code></td>
-<td>Yes</td>
+<td>required</td>
 <td>The numerical index of the item position (1-indexed). For instance, if this is the 5th search result, you would send 5 here. If this is the 3rd card in a single row, send 3. If this is the 2nd item in the 3rd row of a 3-up card layout, send 8 (3 + 3 + 2).</td>
-<td>5</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>5</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td><strong>list_type</strong></td>
 <td><code>string</code></td>
-<td>contextual</td>
+<td>required</td>
 <td>The type of list the item was found in.</td>
-<td>cards, search_results</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>cards, search_results</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td><strong>name</strong></td>
 <td><code>string</code></td>
-<td>Yes</td>
+<td>required</td>
 <td>The form human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the form with. It should be lowercase snake_case.</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>purchase_product</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td><strong>search_term</strong></td>
 <td><code>string</code></td>
 <td>contextual</td>
 <td>The final search term submitted after any correction has been performed. Only set if the <code>list_type</code> is <code>search_results</code>.</td>
-<td>sunscreen</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>sunscreen</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td><strong>search_type</strong></td>
 <td><code>string</code></td>
 <td>contextual</td>
 <td>The type of search performed. Only set if the <code>list_type</code> is <code>search_results</code>.</td>
-<td>site, filter_by_group</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>site, filter_by_group</code></td>
+<td><code>100</code></td>
 </tr>
 </tbody>
 </table>
@@ -2838,7 +2795,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 31, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 10, 2023</span>
       
     
   </small>
