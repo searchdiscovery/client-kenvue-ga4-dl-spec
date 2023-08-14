@@ -2658,9 +2658,10 @@
 <h1 id="view-content">View Content</h1>
 <p>Fire whenever a page whose main purpose is to serve content (e.g. an article or blog post) loads.</p>
 <p>This event is to be used to understand when content is being viewed without any association to a "<a href="../view_content_listing/">Content List</a>".</p>
-<p>??? info "How this event data is used in reporting"</p>
-<div class="highlight"><pre><span></span><code>If an analyst is looking to report on how often a piece of content was engaged with and wants to know the list information (as opposed to how often a content page was viewed), they would use the &quot;[select_content](../../events/content/view_content_listing.md)&quot; in a GA4 report (as opposed to &quot;view_content&quot;). This is because &quot;view_content&quot; will not have associated list information.
-</code></pre></div>
+<details class="info">
+<summary>How this event data is used in reporting</summary>
+<p>If an analyst is looking to report on how often a piece of content was engaged with and wants to know the list information (as opposed to how often a content page was viewed), they would use the "<a href="../view_content_listing/">select_content</a>" in a GA4 report (as opposed to "view_content"). This is because "view_content" will not have associated list information.</p>
+</details>
 <h2 id="javascript-code">Javascript Code</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// When:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// User views an article, blog post, or other content-focused page</span>
