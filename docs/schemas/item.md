@@ -51,7 +51,7 @@ An `item` is how GA4 refers to a product.  An item object should be sent wheneve
 |`gtin`|string|required|A Global Trade Item Number (GTIN). GTINs identify trade items, including products and services, using numeric identification codes. UPCs are a type of GTIN, so they should be added via this parameter.|`012345678905`|
 |`index`|number|contextual|The index/position of the item in a list.|`2`|100|
 |`item_brand`|string|required|Item brand|`Gucci`|100|
-|`item_category`|string|required|Item Category (context-specific). `item_category2` through `item_category5`can also be used if the item has many categories.|`pants`|100|
+|`item_category`|string|required|Item Category (context-specific).|`pants`|100|
 |`item_id`|string|required|Item ID (context-specific). `item_id` should be the item's UPC code, if available. If UPC is not available, `item_id` should be the item's SKU ID. If neither UPC nor SKU are available, the value should be an empty string.|`UPC12345`, `SKU12345`, `""`|100|
 |`item_list_id`|string|contextual|The computer-readable machine name of the list the item showed up in (if sent with a view_item_list event). Use UUID provided by the component if no more specific ID is available.|`12345abcde12345`|100|
 |`item_list_name`|string|contextual|The human-readable name of the item list the item showed up in (if sent with a view_item_list event). If one is not available, populate with numerical index of which list this is on the page (1-indexed). For `filter_by_group` component, use that value.|`filter_by_group`, `recommended_products`, `recently_viewed_products`|100|
