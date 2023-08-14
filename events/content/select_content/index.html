@@ -2671,9 +2671,10 @@
 
 <h1 id="select-content">Select Content</h1>
 <p>Fire whenever a user clicks on a content link found in a list that forwards the user to the content page. List types include card collections, search results, carousels, and other similar components.</p>
-<p>??? info "How this event is used in reporting</p>
-<div class="highlight"><pre><span></span><code>This event is to be used to understand how content is being engaged with in regard to the lists they are a part of. If an analyst is looking to report on how much a piece of content was engaged with and want/need to know the list information, they must use &quot;select_content&quot; in their GA4 report as the event and NOT &quot;[view_content](../../events/content/view_content.md)&quot;. This is because &quot;[view_content](../../events/content/view_content.md)&quot; will not have associated list information.
-</code></pre></div>
+<details class="info">
+<summary>How this event is used in reporting</summary>
+<p>This event is to be used to understand how content is being engaged with in regard to the lists they are a part of. If an analyst is looking to report on how much a piece of content was engaged with and want/need to know the list information, they must use "select_content" in their GA4 report as the event and NOT "<a href="../view_content/">view_content</a>". This is because "<a href="../view_content/">view_content</a>" will not have associated list information.</p>
+</details>
 <p>Pairs with the following event:
 - <a href="../../events/content/view_content_list.md">View Content List</a></p>
 <div class="admonition warning">
