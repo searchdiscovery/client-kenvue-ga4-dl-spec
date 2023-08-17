@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "$id": "https://github.com/searchdiscovery/client-kenvue-ga4-dl-spec/schemas/item.json",
+    "$id": "https://github.com/searchdiscovery/client-kenvue-ga4-dl-spec/blob/main/schemas/item.json",
     "type": "object",
     "title": "Item Object",
     "required": [
