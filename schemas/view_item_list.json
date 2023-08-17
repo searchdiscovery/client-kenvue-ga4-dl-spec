@@ -1,0 +1,72 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://github.com/searchdiscovery/client-kenvue-ga4-dl-spec/schemas/view_item_list.json",
+    "type": "object",
+    "title": "View Item List",
+    "required": [
+        "items",
+        "item_list_id",
+        "item_list_name",
+        "list_type"
+    ],
+    "properties": {
+        "facets": {
+            "type": "string",
+            "description": "A double-delimited string of key/value pairs representing the refinements that were applied if this list is displayed using the Filter By Group component.",
+            "examples": [
+                "category:skin_health~featured_as:best_seller"
+            ]
+        },
+        "items": {
+            "type": "array",
+            "description": "An array of objects representing items displayed to a user.",
+            "items": {
+                "type": "object",
+                "description": "An object describing a single product displayed to a user.",
+                "$ref": "https://github.com/searchdiscovery/client-kenvue-ga4-dl-spec/schemas/item.json"
+            }
+        },
+        "item_list_id": {
+            "type": "string",
+            "description": "The computer-readable machine name of the list the item showed up in (if sent with a view_item_list event). Use UUID provided by the component if no more specific ID is available.",
+            "examples": [
+                "recommended_products",
+                "7d018e77187b0338ab066dbad22a5d80"
+            ]
+        },
+        "item_list_name": {
+            "type": "string",
+            "description": "The human-readable name of the item list the item showed up in. If one is not available, populate with numerical index of which list this is on the page (1-indexed).",
+            "examples": [
+                "filter_by_group",
+                "recommended_products",
+                "recently_viewed_products",
+                "1"
+            ]
+        },
+        "list_type": {
+            "type": "string",
+            "description": "The type of list the item was found in.",
+            "examples": [
+                "product_card_section",
+                "search_results"
+            ]
+        },
+        "search_term": {
+            "type": "string",
+            "description": "The final search term submitted after any correction has been performed. Only set if the list_type is search_results.",
+            "examples": [
+                "toothpaste",
+                "tylenol for kids"
+            ]
+        },
+        "search_type": {
+            "type": "string",
+            "description": "The type of search performed. Only set if the list_type is search_results.",
+            "examples": [
+                "site",
+                "filter_by_group"
+            ]
+        }
+    }
+}
