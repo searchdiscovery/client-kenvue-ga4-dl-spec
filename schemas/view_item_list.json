@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "$id": "https://github.com/searchdiscovery/client-kenvue-ga4-dl-spec/schemas/view_item_list.json",
+    "$id": "https://github.com/searchdiscovery/client-kenvue-ga4-dl-spec/blob/main/schemas/view_item_list.json",
     "type": "object",
     "title": "View Item List",
     "required": [
@@ -23,7 +23,7 @@
             "items": {
                 "type": "object",
                 "description": "An object describing a single product displayed to a user.",
-                "$ref": "https://github.com/searchdiscovery/client-kenvue-ga4-dl-spec/schemas/item.json"
+                "$ref": "https://github.com/searchdiscovery/client-kenvue-ga4-dl-spec/blob/main/schemas/item.json"
             }
         },
         "item_list_id": {
