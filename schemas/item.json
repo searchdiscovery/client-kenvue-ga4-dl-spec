@@ -1,0 +1,117 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://github.com/searchdiscovery/client-kenvue-ga4-dl-spec/schemas/item.json",
+    "type": "object",
+    "title": "Item Object",
+    "required": [
+        "gtin",
+        "index",
+        "item_id",
+        "item_list_id",
+        "item_list_name",
+        "list_type",
+        "item_name"
+    ],
+    "properties": {
+        "item_id": {
+            "type": "string",
+            "description": "Item ID (context-specific). item_id should be the item's UPC code, if available. If UPC is not available, item_id should be the item's SKU ID. If neither UPC nor SKU are available, the value should be an empty string.",
+            "examples": [
+                "SKU12345",
+                "UPC12345",
+                ""
+            ]
+        },
+        "item_name": {
+            "type": "string",
+            "description": "The name of the item. One of item_id or item_name is required."
+        },
+        "affiliation": {
+            "type": "string",
+            "description": "A product affiliation to designate a supplying company or brick and mortar store location.",
+            "examples": [
+                "amazon",
+                "walmart",
+                "walgreens",
+                "cvs"
+            ]
+        },
+        "coupon": {
+            "type": "string",
+            "description": "Coupon code associated with an item."
+        },
+        "discount": {
+            "type": "number",
+            "description": "The monetary discount value associated with the item."
+        },
+        "gtin": {
+            "type": "string",
+            "description": "The Global Trade Identification Number (GTIN) assigned to the item."
+        },
+        "index": {
+            "type": "number",
+            "description": "The index/position of the item in a list."
+        },
+        "item_brand": {
+            "type": "string",
+            "description": "The brand associated with the item."
+        },
+        "item_category": {
+            "type": "string",
+            "description": "The category of the item."
+        },
+        "item_list_id": {
+            "type": "string",
+            "description": "The computer-readable machine name of the list the item showed up in (if sent with a view_item_list event). Use UUID provided by the component if no more specific ID is available.",
+            "examples": [
+                "recommended_products",
+                "7d018e77187b0338ab066dbad22a5d80"
+            ]
+        },
+        "item_list_name": {
+            "type": "string",
+            "description": "The human-readable name of the item list the item showed up in (if sent with a view_item_list event). If one is not available, populate with numerical index of which list this is on the page (1-indexed).",
+            "examples": [
+                "filter_by_group",
+                "recommended_products",
+                "recently_viewed_products",
+                "1"
+            ]
+        },
+        "item_need_state": {
+            "type": "string",
+            "description": "The item need state."
+        },
+        "item_out_of_stock": {
+            "type": "string",
+            "description": "Set as true only if an item is out of stock. Exclude this parameter if the item is in stock."
+        },
+        "item_subcategory": {
+            "type": "string",
+            "description": "The item subcategory.",
+            "examples": [
+                "facial moisturizers & serums",
+                "best sellers",
+                "new"
+            ]
+        },
+        "item_upc": {
+            "type": "string",
+            "description": "The UPC code of the product."
+        },
+        "item_variant": {
+            "type": "string",
+            "description": "The item variant.",
+            "examples": [
+                "black",
+                "50ct",
+                "6oz",
+                "medium"
+            ]
+        },
+        "location_id": {
+            "type": "string",
+            "description": "The location associated with the event. If possible, set to the Google Place ID that corresponds to the associated item. Can also be overridden to a custom location ID string."
+        }
+    }
+}
