@@ -27,7 +27,7 @@ dataLayer.push({
   event: "next_carousel_slide",
   event_data: {
     identifier: "<identifier>", // REQUIRED | string | ex. 12345abcde12345
-    name: "<name>", // contextual | string | ex. Most Popular Blog Posts, 2	
+    name: "<name>", // contextual | string | ex. Most Popular Blog Posts, Homepage Main Content	
     index: "<index>", // contextual | integer | ex. 1 | min. lgth. 1 | min. 1
     target_index: "<target_index>" // contextual | integer | ex. 2 | min. lgth. 1 | min. 1 
   }
