@@ -18,7 +18,7 @@ We use GitHub Issues to centralize discussions around spec changes. Once an issu
 
 #### Create a new issue
 
-If you'd like to propose a change to the spec, search to see if there's already an issue. If a related issue doesn't exist, you can open a new issue using the issue form.
+If you'd like to propose a change to the spec, [search to see if there's already an issue](https://github.com/searchdiscovery/client-kenvue-ga4-dl-spec/issues). If a related issue doesn't exist, you can [open a new issue using the issue form](https://github.com/searchdiscovery/client-kenvue-ga4-dl-spec/issues/new).
 
 #### Solve an issue
 
