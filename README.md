@@ -27,5 +27,8 @@ We defer to stylistic preferences in the target codebase, but here are the JavaS
 - No trailing commas
 - Semicolons required
 
+## Contributing
+We welcome contributions! If you'd like to contribute, please review our [Contributing Guide](./CONTRIBUTING.md).
+
 ## Questions/Comments
-For any questions or comments, please contact charlie.tysse@searchdiscovery.com.
+For any questions or comments, please [open a discussion](https://github.com/searchdiscovery/client-kenvue-ga4-dl-spec/discussions).
