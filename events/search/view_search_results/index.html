@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../select_search_result/">
+        <link rel="prev" href="../search/">
       
       
         <link rel="next" href="../../skin360/skin360_score_view/">
@@ -2100,10 +2100,6 @@
       
         
       
-        
-      
-        
-      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -2138,51 +2134,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../filter_item_category/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Filter Item Category
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../search/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Search
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../select_search_result/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Select Search Result
   </span>
   
 
@@ -3381,7 +3337,7 @@
 
 
 <h1 id="view-search-results">View Search Results</h1>
-<p>Fire whenever a user views search results. This includes product searches, content searches, resource searches, etc. and does not require a search event to be fired prior to it.</p>
+<p>Fire whenever a user views search results. This includes product searches, content searches, resource searches, etc., and <strong><em>DOES NOT REQUIRE</em></strong> a search event to be fired prior to it.</p>
 <p>This event should also be considered for the "Filter By Group" component if it is ever used to display anything but products. When used in this way, the search_term parameter would be <code>filter_by_group</code> as that component does not currently allow for a search_term to be entered by the user. If this case does arise, contact Search Discovery for additional information.</p>
 <h2 id="javascript-code">Javascript Code</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// When:</span>
@@ -3393,8 +3349,8 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;view_search_results&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">facets</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;refinements&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string - double delimited (:)(~) | ex. category:skin_health~featured_as:best_seller   </span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">number_of_items</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;number_of_items&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | integer | ex. 324</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">facets</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;refinements&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string - double delimited (:)(~) | ex. category:skin_health~featured_as:best_seller    </span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">number_of_items</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;number_of_items&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | integer | ex. 1,324,0</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">search_term</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;search_term&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. sunscreen</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nx">search_type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;search_type&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. ecp_locator, filter_by_group,product, site </span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="p">}</span>
@@ -3409,40 +3365,25 @@
 <th>Required</th>
 <th>Description</th>
 <th>Example</th>
-<th>Pattern</th>
-<th>Min Length</th>
-<th>Max Length</th>
-<th>Minimum</th>
-<th>Maximum</th>
-<th>Multiple Of</th>
+<th>Maximum Length</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>facets</code></td>
 <td>delimited string</td>
-<td>recommended</td>
+<td>contextual</td>
 <td>A delimited string of key/value pairs representing the facets that were applied to this search</td>
 <td><code>need:skin health~skin_concern:acne~featured_as:best_seller</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td><code>number_of_items</code></td>
 <td>integer</td>
-<td>recommended</td>
+<td>required</td>
 <td>The total number of search results found</td>
-<td><code>324</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>1</code>,<code>324</code>.<code>0</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td><code>search_term</code></td>
@@ -3450,12 +3391,7 @@
 <td>required</td>
 <td>The final search term submitted after any correction has been performed</td>
 <td><code>sunscreen</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td><code>search_type</code></td>
@@ -3463,12 +3399,7 @@
 <td>required</td>
 <td>The type of search performed</td>
 <td><code>ecp_locator</code>,<code>filter_by_group</code>,<code>product</code>,<code>site</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>100</code></td>
 </tr>
 </tbody>
 </table>
@@ -3478,7 +3409,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 21, 2023</span>
       
     
   </small>

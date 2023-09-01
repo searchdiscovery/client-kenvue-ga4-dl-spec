@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../filter_item_category/">
+        <link rel="prev" href="../../reviews/review_start/">
       
       
-        <link rel="next" href="../select_search_result/">
+        <link rel="next" href="../view_search_results/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -2100,10 +2100,6 @@
       
         
       
-        
-      
-        
-      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -2131,26 +2127,6 @@
             Search
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../filter_item_category/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Filter Item Category
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -2221,26 +2197,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../select_search_result/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Select Search Result
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -3392,7 +3348,7 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;search&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">corrected_term</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;search_term_corrected&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. suns</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">corrected_term</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;search_term_corrected&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. suns</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">search_term</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;search_term&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. sunscreen</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">search_type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;search_type&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex ecp_locator,product,site    </span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="p">}</span>
@@ -3407,53 +3363,33 @@
 <th>Required</th>
 <th>Description</th>
 <th>Example</th>
-<th>Pattern</th>
-<th>Min Length</th>
-<th>Max Length</th>
-<th>Minimum</th>
-<th>Maximum</th>
-<th>Multiple Of</th>
+<th>Maximum Length</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>search_term_corrected</td>
 <td>string</td>
-<td>recommended</td>
+<td>contextual</td>
 <td>The initial search term before typeahead/lookahead/suggestion, if the site has those features.</td>
-<td>suns</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>suns</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td>search_term</td>
 <td>string</td>
 <td>required</td>
 <td>The final search term submitted after any correction has been performed</td>
-<td>sunscreen</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>sunscreen</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td>search_type</td>
 <td>string</td>
 <td>required</td>
 <td>The type of search performed</td>
-<td>ecp_locator,product,site</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>ecp_locator</code>,<code>product</code>,<code>site</code></td>
+<td><code>100</code></td>
 </tr>
 </tbody>
 </table>
@@ -3463,7 +3399,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 21, 2023</span>
       
     
   </small>
