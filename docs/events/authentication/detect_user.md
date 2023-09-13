@@ -2,9 +2,13 @@
 
 This is a conditional event that should only be fired in very specific cases. It is intended to cover cases where a user authentication system exists on the site but the user authentication state may not be known by the time the page_view event is sent. In that case, send this event as soon as the user authentication state is known.
 
-_**Do not**_ clear the page_data variable before setting user_login_state here as this is not a page view.
+!!! warning
 
-If the "user_id" is _**NOT**_ available, _**DO NOT**_ populate with an empty string (ex. "") or undefined as a string (ex. "undefined"). This value must _**ONLY**_ be populated with a valid user id. If this value is not available, then either _**DO NOT**_ include the parameter in the data layer push or populate with an undefined object (not a string)
+    _**Do not**_ clear the page_data variable before setting user_login_state here as this is not a page view.
+
+??? info "DO NOT populate user_id with a string value if unavailable"
+
+    If the "user_id" is _**NOT**_ available, _**DO NOT**_ populate with an empty string (ex. "") or undefined as a string (ex. "undefined"). This value must _**ONLY**_ be populated with a valid user id. If this value is not available, then either _**DO NOT**_ include the parameter in the data layer push or populate with an undefined object (not a string).
 
 ## Javascript Code
 
