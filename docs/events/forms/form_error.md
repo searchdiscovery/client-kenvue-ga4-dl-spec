@@ -1,3 +1,7 @@
+---
+title: Form Error
+---
+
 # Form Error
 
 Fire whenever a user unsuccessfully completes a form. 
