@@ -1,3 +1,7 @@
+---
+title: Coupon Print Error
+---
+
 # Coupon Print Error
 
 Fire whenever a user encounters an error printing a coupon. 
