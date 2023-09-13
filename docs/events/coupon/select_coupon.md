@@ -1,3 +1,7 @@
+---
+title: Select Coupon
+---
+
 # Select Coupon
 
 Fire whenever a user selects a coupon.
