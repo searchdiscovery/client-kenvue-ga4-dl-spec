@@ -23,5 +23,5 @@ dataLayer.push({
 
 |Field|Type|Required|Description|Example|Maximum Length|
 | --- | --- | --- | --- | --- | --- |
-|coupons|delimited string|required|A delimited string of coupons that the user selected and is now downloading or printing.|`couponName1~couponName2~couponName3`|`100`|
-|error_message|string|required|The specific error that occurred. If an error message is shown to the user, this should be populated with that text.|`Phone number should follow the format (xxx) xxx-xxxx, Must be a valid email address`|`100`|
+|**coupons**|d`elimited string`|required|A delimited string of coupons that the user selected and is now downloading or printing.|`couponName1~couponName2~couponName3`|`100`|
+|**error_message**|`string`|required|The specific error that occurred. If an error message is shown to the user, this should be populated with that text.|`Phone number should follow the format (xxx) xxx-xxxx, Must be a valid email address`|`100`|
