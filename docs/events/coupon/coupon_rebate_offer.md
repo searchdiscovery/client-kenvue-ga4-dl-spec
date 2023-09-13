@@ -1,3 +1,7 @@
+---
+title: Coupon Rebate Offer
+---
+
 # Coupon Rebate Offer
 
 Fire whenever a user is presented with a coupon rebate offer.
