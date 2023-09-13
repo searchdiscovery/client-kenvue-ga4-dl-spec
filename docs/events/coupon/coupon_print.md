@@ -1,3 +1,7 @@
+---
+title: Coupon Print
+---
+
 # Coupon Print
 
 Fire whenever a user attempts to print a coupon.
