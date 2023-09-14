@@ -1,3 +1,7 @@
+---
+title: Coupon Print
+---
+
 # Coupon Print
 
 Fire whenever a user attempts to print a coupon.
@@ -21,6 +25,6 @@ dataLayer.push({
 
 ## Variable Definitions
 
-|Field|Type|Required|Description|Example|Pattern|Min Length|Max Length|Minimum|Maximum|Multiple Of|
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-|`event_data.coupons`|delimited string|required|A delimited string of coupons that the user selected and is now downloading or printing.|`couponName1~couponName2~couponName3`|
+|Field|Type|Required|Description|Example|Maximum Length|
+| --- | --- | --- | --- | --- | --- |
+|**coupons**|`delimited string`|required|A delimited string of coupons that the user selected and is now downloading or printing.|`couponName1~couponName2~couponName3`|`100`|
