@@ -30,7 +30,7 @@ dataLayer.push({
 
 |Field|Type|Required|Description|Example|Maximum Length|
 | --- | --- | --- | --- | --- | --- |
-|**identifier**|`string`|recommended|The subscription machine-readable name. This should be a unique value specific to this subscription, if one exists. If one does not exist, this can also be populated with the same value as the `name`.|`neutrogena_newsletter_123`, `jnj_promos_123`|`100`|
+|**identifier**|`string`|required|The subscription machine-readable name. This should be a unique value specific to this subscription, if one exists. If one does not exist, this can also be populated with the same value as the `name`.|`neutrogena_newsletter_123`, `jnj_promos_123`|`100`|
 |**name**|`string`|required|The subscription human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the subscription with. It should be lowercase snake_case.|`neutrogena_newsletter`, `jnj_promos`|`100`|
 |**type**|`string`|required|The subscription type. This will act as a filtering mechanism in reporting to enable analysts to view subscription dropoff funnels. It can also act as an internal aid in firing additional events if necessary. For instance, lead-generating subscriptions require a `generate_lead` event to be fired alongside `form_complete`, and that could be written into the logic based upon this field.|`newsletter`, `promos`|`100`|
-|**method**|`string`|recommended|The channel through which the subscription is delivered. This is usually email, but can also be product.|`email`,`product`|`100`|
+|**method**|`string`|required|The channel through which the subscription is delivered. This is usually email, but can also be product.|`email`,`product`|`100`|
