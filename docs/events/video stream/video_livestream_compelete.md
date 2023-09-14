@@ -20,7 +20,7 @@ dataLayer.push({
   event_data: {
     identifier: '<identifier>', // REQUIRED | string | ex. 2023 My Video For All, 2023 Product Holiday Launch
     name: '<name>', // REQUIRED | string | ex. 2023 My Video For All, 2023 Product Holiday Launch
-    type: '<type>', // REQUIRED | string | ex. public,internal,brand awareness, lead_generation
+    type: '<type>', // REQUIRED | string | ex. public, internal, brand awareness, lead_generation
     video_current_time: '<video_current_time>', // REQUIRED | string | ex. 15
     video_duration: '<video_duration>', // REQUIRED | string | ex. 600
     video_percent: '<video_percent>', // REQUIRED | string | ex. 15
