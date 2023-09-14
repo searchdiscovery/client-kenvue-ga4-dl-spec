@@ -20,7 +20,7 @@
     
     
       
-        <title>Form Complete - Kenvue Marketing Analytics Data Layer Schema | GA4</title>
+        <title>Form File Uploaded - Kenvue Marketing Analytics Data Layer Schema | GA4</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#form-complete" class="md-skip">
+        <a href="#form-file-uploaded" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Form Complete
+              Form File Uploaded
             
           </span>
         </div>
@@ -1883,7 +1883,7 @@
           
   
   <span class="md-ellipsis">
-    Form Complete
+    Form File Uploaded
   </span>
   
 
@@ -1894,7 +1894,7 @@
         
   
   <span class="md-ellipsis">
-    Form Complete
+    Form File Uploaded
   </span>
   
 
@@ -3268,7 +3268,7 @@
   
 
 
-<h1 id="form-complete">Form Complete</h1>
+<h1 id="form-file-uploaded">Form File Uploaded</h1>
 <p>Fire whenever a user successfully uploads a file (such as a receipt) within a form.</p>
 <h2 id="javascript-code">Javascript Code</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// When:</span>
@@ -3280,13 +3280,12 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;form_file_upload&#39;</span><span class="p">,</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;identifier&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. ecp_locator, free_trial   </span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;identifier&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. ecp_locator, free_trial  </span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. ecp_locator, free_trial  </span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;type&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. contact, lead_generation</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nx">file_extension</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;file_extension&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. pdf</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nx">file_name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;file_name&gt;&#39;</span><span class="w"> </span><span class="c1">// recommended | string | ex. example.pdf</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">});</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nx">file_extension</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;file_extension&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. pdf</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">});</span>
 </code></pre></div>
 <h2 id="variable-definitions">Variable Definitions</h2>
 <table>
@@ -3297,79 +3296,41 @@
 <th>Required</th>
 <th>Description</th>
 <th>Example</th>
-<th>Pattern</th>
-<th>Min Length</th>
-<th>Max Length</th>
-<th>Minimum</th>
-<th>Maximum</th>
-<th>Multiple Of</th>
+<th>Maximum Length</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>identifier</td>
-<td>string</td>
-<td>recommended</td>
-<td>The form machine-readable name. This should be a unique value specific to this form, if one exists. If one does not exist, this can also be populated with the same value as the <name>.</td>
-<td>ecp_locator, free_trial</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><strong>identifier</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The form machine-readable name. This should be a unique value specific to this piece of content, if one exists. If one does not exist, this can also be populated with the same value as the <name>.</td>
+<td><code>contact</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>name</td>
-<td>string</td>
+<td><strong>name</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The form human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the form with. It should be lowercase snake_case.</td>
-<td>ecp_locator, free_trial</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>contact</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>type</td>
-<td>string</td>
+<td><strong>type</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The form type. This will act as a filtering mechanism in reporting to enable analysts to view form droppoff funnels. It can also act as an internal aid in firing additional events if necessary. For instance, lead-generating forms require a <code>generate_lead</code> event to be fired alongside <code>form_complete</code>, and that could be written into the logic based upon this field.</td>
-<td>contact, lead_generation</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>contact</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>file_extension</td>
-<td>string</td>
-<td>recommended</td>
+<td><strong>file_extension</strong></td>
+<td><code>string</code></td>
+<td>REQUIRED</td>
 <td>The file extension of the file being uploaded.</td>
-<td>pdf</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>file_name</td>
-<td>string</td>
-<td>recommended</td>
-<td>The filename of the file being uploaded.</td>
-<td>drug_facts.pdf</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>pdf</code></td>
+<td><code>100</code></td>
 </tr>
 </tbody>
 </table>
@@ -3379,7 +3340,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
       
     
   </small>

@@ -1928,7 +1928,7 @@
         
   
   <span class="md-ellipsis">
-    Form Complete
+    Form File Uploaded
   </span>
   
 
@@ -3270,29 +3270,39 @@
 
 <h1 id="form-complete">Form Complete</h1>
 <p>Fire whenever a user successfully completes a form. </p>
-<p>This event is fired when form input is successfully received and process. This is in contrast to <code>form_error</code> which occurs when a submission is attempted but an error occurs and the form input is not recieved and processed.</p>
+<p>This event is fired when form input is successfully received and processed. This is in contrast to <a href="../form_error/"><code>form_error</code></a> which occurs when a submission is attempted but an error occurs and the form input is not received and processed.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><em><strong>Do not</strong></em> clear the page_data variable before setting user_login_state here as this is not a page view.</p>
+</div>
+<details class="info">
+<summary>DO NOT populate user_id with a string value if unavailable</summary>
+<p>If the "user_id" is <em><strong>NOT</strong></em> available, <em><strong>DO NOT</strong></em> populate with an empty string (ex. "") or undefined as a string (ex. "undefined"). This value must <em><strong>ONLY</strong></em> be populated with a valid user id. If this value is not available, then either <em><strong>DO NOT</strong></em> include the parameter in the data layer push or populate with an undefined object (not a string).</p>
+</details>
 <h2 id="javascript-code">Javascript Code</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// When:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// User successfully completes a form and data is received and processed</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">// Code:</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">[];</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="w"> </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">user_data</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="p">});</span><span class="w">  </span><span class="c1">// Clear the previous event_data object.</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;form_complete&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;identifier&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. ecp_locator, free_trial   </span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. ecp_locator, free_trial  </span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;type&gt;&#39;</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. contact, lead_generation  </span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nx">user_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nx">user_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;user_id&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional | string | ex. 12345</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nx">user_login_state</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;user_login_state&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional | string | ex. authenticated, anonymous </span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nx">user_type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;user_type&gt;&#39;</span><span class="w"> </span><span class="c1">// optional | string | ex. new, returning</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nx">event_form_custkey</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;SFMC_CustomerKey&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. 12345...</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nx">event_form_hashemail</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;HashedEmail&gt;&#39;</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. b642b4217b34b1e8d3bd915fc65c4452 (MD5)</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">});</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">// NOTE: Do not clear the page_data variable before setting user_login_state here. This is not a page view.</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">// Code:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">[];</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="w"> </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">user_data</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="p">});</span><span class="w">  </span><span class="c1">// Clear the previous event_data and user_data objects.</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;form_complete&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nx">page_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">user_login_state</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;user_login_state&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. authenticated, anonymous </span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;identifier&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. contact, lead_generation</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. contact, lead_generation </span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;type&gt;&#39;</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. contact, lead_generation  </span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nx">user_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nx">user_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;user_id&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. 12345</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nx">user_type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;user_type&gt;&#39;</span><span class="w"> </span><span class="c1">// contextual | string | ex. new, returning</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="nx">event_form_custkey</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;SFMC_CustomerKey&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. 12345...</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="nx">event_form_hashemail</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;HashedEmail&gt;&#39;</span><span class="w"> </span><span class="c1">// contextual | string | ex. b642b4217b34b1e8d3bd915fc65c4452 (MD5)</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="p">});</span>
 </code></pre></div>
 <h2 id="variable-definitions">Variable Definitions</h2>
 <table>
@@ -3303,118 +3313,73 @@
 <th>Required</th>
 <th>Description</th>
 <th>Example</th>
-<th>Pattern</th>
-<th>Min Length</th>
-<th>Max Length</th>
-<th>Minimum</th>
-<th>Maximum</th>
-<th>Multiple Of</th>
+<th>Maximum Length</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>identifier</td>
-<td>string</td>
-<td>recommended</td>
-<td>The form machine-readable name. This should be a unique value specific to this form, if one exists. If one does not exist, this can also be populated with the same value as the <name>.</td>
-<td>ecp_locator, free_trial</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><strong>identifier</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The form machine-readable name. This should be a unique value specific to this piece of content, if one exists. If one does not exist, this can also be populated with the same value as the <name>.</td>
+<td><code>contact</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>name</td>
-<td>string</td>
+<td><strong>name</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The form human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the form with. It should be lowercase snake_case.</td>
-<td>ecp_locator, free_trial</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>contact</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>type</td>
-<td>string</td>
+<td><strong>type</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The form type. This will act as a filtering mechanism in reporting to enable analysts to view form droppoff funnels. It can also act as an internal aid in firing additional events if necessary. For instance, lead-generating forms require a <code>generate_lead</code> event to be fired alongside <code>form_complete</code>, and that could be written into the logic based upon this field.</td>
-<td>contact, lead_generation</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>contact</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>user_id</td>
-<td>string</td>
+<td><strong>user_id</strong></td>
+<td><code>string</code></td>
 <td>contextual</td>
-<td>The id of the user currently logged in to the site, if the site offers authentication and the user is authenticated.</td>
-<td>123456</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>The user identifier. This should only be populated with a valid user id. This <em><strong>MUST NOT</strong></em> be populated with any other string (e.x. "undefined", "null"). Using an undefined object is permitted.</td>
+<td><code>1234567890</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>user_login_state</td>
-<td>string</td>
-<td>contextual</td>
+<td><strong>user_login_state</strong></td>
+<td><code>string</code></td>
+<td>required</td>
 <td>Set on all events with the authentication status of the visitor.</td>
-<td>authenticated, anonymous</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>authenticated</code>, <code>anonymous</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>user_type</td>
-<td>string</td>
+<td><strong>user_type</strong></td>
+<td><code>string</code></td>
 <td>contextual</td>
 <td>Set on all events with the authentication type of the visitor are they new or returning</td>
-<td>new, returning</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>new</code>, <code>returning</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>event_form_custkey</td>
-<td>string</td>
-<td>required</td>
+<td><strong>event_form_custkey</strong></td>
+<td><code>string</code></td>
+<td>contextual</td>
 <td>This is the ID created by Salesforce Marketing cloud</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>12345...</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>event_form_hashemail</td>
-<td>string</td>
-<td>required</td>
+<td><strong>event_form_hashemail</strong></td>
+<td><code>string</code></td>
+<td>contextual</td>
 <td>Converts the submitted email into hased format</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>b642b4217b34b1e8d3bd915fc65c4452 (MD5)</code></td>
+<td><code>100</code></td>
 </tr>
 </tbody>
 </table>
@@ -3424,7 +3389,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
       
     
   </small>
