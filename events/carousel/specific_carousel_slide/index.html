@@ -3304,9 +3304,9 @@
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;specific_carousel_slide&#39;</span><span class="p">,</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;identifier&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. 12345abcde12345</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;name&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. Most Popular Blog Posts, 2    </span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;index&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | integer | ex. 1 | min. lgth. 1 | min. 1</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">target_index</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;target_index&gt;&quot;</span><span class="w"> </span><span class="c1">// recommended | integer | ex. 2 | min. lgth. 1 | min. 1 </span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;name&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. Most Popular Blog Posts, Homepage Main Content </span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;index&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | integer | ex. 1 | min. lgth. 1 | min. 1</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">target_index</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;target_index&gt;&quot;</span><span class="w"> </span><span class="c1">// contextual | integer | ex. 2 | min. lgth. 1 | min. 1 </span>
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">});</span>
 </code></pre></div>
@@ -3319,12 +3319,9 @@
 <th>Required</th>
 <th>Description</th>
 <th>Example</th>
-<th>Pattern</th>
-<th>Min Length</th>
-<th>Max Length</th>
+<th>Minimum Length</th>
+<th>Maximum Length</th>
 <th>Minimum</th>
-<th>Maximum</th>
-<th>Multiple Of</th>
 </tr>
 </thead>
 <tbody>
@@ -3333,52 +3330,40 @@
 <td>string</td>
 <td>required</td>
 <td>The computer-readable machine name of the carousel. Use UUID provided by the component</td>
-<td>12345abcde12345</td>
+<td><code>12345abcde12345</code></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>100</code></td>
 <td></td>
 </tr>
 <tr>
 <td>name</td>
 <td>string</td>
-<td>recommended</td>
+<td>contextual</td>
 <td>The human-readable name of the carousel. If user does not input one, populate with numerical index of which carousel this is on the page (1-indexed)</td>
-<td>Most Popular Blog Posts, 2</td>
+<td><code>Most Popular Blog Posts</code>,<code>Homepage Main Content</code></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>100</code></td>
 <td></td>
 </tr>
 <tr>
 <td>index</td>
 <td>integer</td>
-<td>recommended</td>
+<td>contextual</td>
 <td>The slide # the carousel is on at time of interaction (1-indexed)</td>
-<td>1</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><code>100</code></td>
+<td><code>1</code></td>
 </tr>
 <tr>
 <td>target_index</td>
 <td>integer</td>
-<td>recommended</td>
+<td>contextual</td>
 <td>The slide # of the target slide (1-indexed)</td>
-<td>2</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
+<td><code>2</code></td>
+<td><code>1</code></td>
+<td><code>100</code></td>
+<td><code>1</code></td>
 </tr>
 </tbody>
 </table>
@@ -3388,7 +3373,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 22, 2023</span>
       
     
   </small>
