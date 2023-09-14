@@ -3270,7 +3270,14 @@
 
 <h1 id="detect-user">Detect User</h1>
 <p>This is a conditional event that should only be fired in very specific cases. It is intended to cover cases where a user authentication system exists on the site but the user authentication state may not be known by the time the page_view event is sent. In that case, send this event as soon as the user authentication state is known.</p>
-<p>Do not clear the page_data variable before setting user_login_state here as this is not a page view.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><em><strong>Do not</strong></em> clear the page_data variable before setting user_login_state here as this is not a page view.</p>
+</div>
+<details class="info">
+<summary>DO NOT populate user_id with a string value if unavailable</summary>
+<p>If the "user_id" is <em><strong>NOT</strong></em> available, <em><strong>DO NOT</strong></em> populate with an empty string (ex. "") or undefined as a string (ex. "undefined"). This value must <em><strong>ONLY</strong></em> be populated with a valid user id. If this value is not available, then either <em><strong>DO NOT</strong></em> include the parameter in the data layer push or populate with an undefined object (not a string).</p>
+</details>
 <h2 id="javascript-code">Javascript Code</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// When:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// User authentication exists, but the &#39;authentication state&#39; may not be known by the time the page_view event is fired.</span>
@@ -3278,15 +3285,15 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">// Code:</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">[];</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="w"> </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">user_data</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="p">});</span><span class="w">  </span><span class="c1">// Clear the previous event_data object.</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="w"> </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">user_data</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="p">});</span><span class="w">  </span><span class="c1">// Clear the previous event_data and user_data objects.</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;detect_user&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nx">page_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">user_login_state</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;user_login_state&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. 1234567890    </span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">user_login_state</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;user_login_state&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. authenticated, anonymous</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="p">},</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nx">user_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nx">user_id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;user_id&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional | string | ex. authenticated, anonymous</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nx">user_type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;user_type&gt;&#39;</span><span class="w"> </span><span class="c1">// optional | string | ex. new, returning</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nx">user_id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;user_id&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. 1234567890</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nx">user_type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;user_type&gt;&#39;</span><span class="w"> </span><span class="c1">// contextual | string | ex. new, returning</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="p">});</span>
 </code></pre></div>
@@ -3299,53 +3306,33 @@
 <th>Required</th>
 <th>Description</th>
 <th>Example</th>
-<th>Pattern</th>
-<th>Min Length</th>
-<th>Max Length</th>
-<th>Minimum</th>
-<th>Maximum</th>
-<th>Multiple Of</th>
+<th>Maximum Length</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>user_id</td>
 <td>string</td>
-<td>recommended</td>
-<td>The user identifier</td>
-<td>1234567890</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>contextual</td>
+<td>The user identifier. This should only be populated with a valid user id. This <em><strong>MUST NOT</strong></em> be populated with any other string (e.x. "undefined", "null"). Using an undefined object is permitted.</td>
+<td><code>1234567890</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td>user_login_state</td>
 <td>string</td>
-<td>contextual</td>
+<td>required</td>
 <td>Set on all events with the authentication status of the visitor.</td>
-<td>authenticated, anonymous</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>authenticated</code>, <code>anonymous</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
 <td>user_type</td>
 <td>string</td>
 <td>contextual</td>
 <td>Set on all events with the authentication type of the visitor are they new or returning</td>
-<td>new, returning</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>new</code>, <code>returning</code></td>
+<td><code>100</code></td>
 </tr>
 </tbody>
 </table>
@@ -3355,7 +3342,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
       
     
   </small>
