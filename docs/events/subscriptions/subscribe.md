@@ -1,5 +1,5 @@
 ---
-title: Coupon Print
+title: Subscribe
 ---
 
 # Subscribe
