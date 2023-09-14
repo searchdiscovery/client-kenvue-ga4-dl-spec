@@ -14,14 +14,14 @@ dataLayer.push({ event_data: null });  // Clear the previous event_data object.
 dataLayer.push({
   event: 'sign_up',
   event_data: {
-    method: '<method>' // recommended | string | ex. local, social_login
-  }
+    method: "<method>", // REQUIRED | string | ex. google, linkedin, email and password
+  },
 });
 ```
 
 ## Variable Definitions
 
-|Field|Type|Required|Description|Example|Pattern|Min Length|Max Length|Minimum|Maximum|Multiple Of|
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-|method|string|recommended|The method by which a user created a new account.|local, social_login|
+|Field|Type|Required|Description|Example|Maximum Length|
+| --- | --- | --- | --- | --- | --- |
+|method|string|required|The method by which a user created a new account.|`local`, `social_login`|`100`|
 
