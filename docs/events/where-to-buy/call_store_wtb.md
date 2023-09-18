@@ -44,7 +44,7 @@ dataLayer.push({
 |**affiliation**|`string`|required|This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify. It should be lowercase snake_case|`walmart`, `cvs`|`100`|
 |**component_type**|`string`|required|The human-readable name of the WTB Provider. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify. It should be lowercase snake_case.|`pricespider`, `channeladvisor`|`100`|
 |**item_brand**|`string`|required|The human-readable name of the brand. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify. It should be lowercase snake_case|`tylenol`, `zyrtec`, `listerine`|`100`|
-|**item_id**|`string`|required|SKU ID of the product a customer would be calling a store about.|`CW21001`|
+|**item_id**|`string`|required|SKU ID of the product a customer would be calling a store about.|`CW21001`|`100`|
 |**item_name**|`string`|required|The human-readable product name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify. It should be lowercase snake_case|`essential_foaming_cleanser`|`100`|
-|**item_upc**|`string`|contextual|UPC ID of the product a customer would be calling a store about.|`012345678905`|
+|**item_upc**|`string`|contextual|UPC ID of the product a customer would be calling a store about.|`012345678905`|`100`|
 |**link_url**|`string`|required|This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify. It should be lowercase snake_case|`https://www.example.com?q=product#id`|`100`|
