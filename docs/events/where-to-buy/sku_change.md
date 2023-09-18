@@ -1,3 +1,7 @@
+---
+title: Change Item SKU
+---
+
 # Change Item SKU
 
 Fire whenever a user successfully changes the sku they are looking at within the WTB tool.
