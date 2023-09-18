@@ -1,5 +1,5 @@
 ---
-title: Call Store WTB
+title: Get Directions WTB
 ---
 
 # Get Directions WTB
