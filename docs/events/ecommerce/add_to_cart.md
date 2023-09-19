@@ -15,7 +15,8 @@ dataLayer.push({
   event: "add_to_cart",
   event_data: {
     identifier: "<identifier>", // REQUIRED | string | ex. uniquely_created_id, skin360_pwa_ntg_atc
-    name: '<name>', // REQUIRED | string | ex. pdp_add_to_cart, skin360_pwa_ntg add_to_cart
+    name: '<name>' // REQUIRED | string | ex. pdp_add_to_cart, skin360_pwa_ntg add_to_cart
+},
   ecommerce: {
     currency: "<currency>", // REQUIRED | string | ex. USD | pattern: ^[A-Z]{3}$ | min. 3| max. 3
     items: "<items>", // REQUIRED | array | ex. [{item_id: "test"}]
