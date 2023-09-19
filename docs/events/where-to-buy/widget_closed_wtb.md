@@ -1,8 +1,8 @@
 ---
-title: Change Item SKU
+title: Widget Closed WTB
 ---
 
-# Close WTB Widget
+# Widget Closed WTB
 
 Fire whenever a user successfully closes the WTb widget. 
 
