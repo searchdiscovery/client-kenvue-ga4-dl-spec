@@ -13,16 +13,22 @@ For example, if a `<button>` tag is used in combination with Javascript to repre
 ```html
 <button
   data-layer-event="click"
+  data-layer-identifier="<identifier>"
+  data-layer-name="<name>"
+  data-layer-component_ancestry="<component_ancestry>"
   data-layer-category="<category>"
   data-layer-category2="<category2>"
   data-layer-category3="<category3>"
   data-layer-category4="<category4>"
   data-layer-category5="<category5>"
-  data-layer-identifier="<identifier>"
+  data-layer-link_id="<link_id>"
+  data-layer-link_classes="<link_classes>"
   data-layer-link_text="<link_text>"
   data-layer-link_url="<link_url>"
-  data-layer-link_hostname="<link_hostname>"      
+  data-layer-link_hostname="<link_hostname>"
+  data-layer-navigation_ancestry="<navigation_ancestry>"      
   data-layer-outbound="<outbound>"
+  data-layer-region_ancestry="<region_ancestry>"
   data-layer-protocol="<type>"
 >
 ```
