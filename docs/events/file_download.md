@@ -9,18 +9,20 @@ For example, if a `<button>` tag is used in combination with Javascript to repre
 ```html
 <a href="<link_url>"
   data-layer-event="file_download"
-  data-layer-component_ancestry="<component_ancestry>"
-  data-layer-file_extension="<file_extension>"
-  data-layer-file_name="<file_name>"
   data-layer-identifier="<identifier>"
-  data-layer-link_url="<link_url>"
+  data-layer-name="<name>"
+  data-layer-component_ancestry="<component_ancestry>"
   data-layer-link_id="<link_id>"
   data-layer-link_classes="<link_classes>"
   data-layer-link_text="<link_text>"
-  data-layer-navigation_ancestry="<navigation_ancestry>"
+  data-layer-link_url="<link_url>"
+  data-layer-link_hostname="<link_hostname>"
+  data-layer-navigation_ancestry="<navigation_ancestry>"      
   data-layer-outbound="<outbound>"
   data-layer-region_ancestry="<region_ancestry>"
   data-layer-protocol="<type>"
+  data-layer-file_extension="<file_extension>"
+  data-layer-file_name="<file_name>"
 >
 ```
 
@@ -36,36 +38,39 @@ dataLayer.push({ event_data: null });  // Clear the previous event_data object.
 dataLayer.push({
   event: "file_download",
   event_data: {
-    component_ancestry: "<component_ancestry>", // recommended | string - delimited (~) | ex. hero~product carousel
+    identifier: '<identifier>', // REQUIRED | string | ex. uniquely_created_id
+    name: '<name>', // REQUIRED | string | ex. Learn More, How it works, Ingredients, Connect
+    component_ancestry: "<component_ancestry>", // contextual | string | string - delimeted (~) | ex. hero~product carousel
+    link_classes: "<link_classes>", // REQUIRED | string | ex. button-red 
+    link_id: "<link_id>", // REQUIRED | string | ex. submit-button
+    link_text: "<link_text>", // REQUIRED | string | ex. click here
+    link_url: "<link_url>", // REQUIRED | string | ex. https://www.example.com/form
+    link_hostname: "<link_hostname>", // REQUIRED | string | ex. https://www.example.com
+    navigation_ancestry: "<navigation_ancestry>", // contextual | string - delimeted (~) | ex. about~our ceo
+    outbound: "<outbound>", // contextual | boolean | ex. false
+    region_ancestry: "<region_ancestry>", // contextual | string - delimeted (~) | ex. header~navigation
+    protocol: "<type>" // REQUIRED | string | ex. http, https, mailto, tel
     file_extension: "<file_extension>", // recommended | string | ex. pdf
     file_name: "<file_name>", // recommended | string | ex. example.pdf
-    identifier: "<identifier>", // optional | string | ex. uniquely_created_id
-    link_url: "<link_url>", // REQUIRED | string | ex. https://www.example.com/form
-    link_id: "<link_id>", // REQUIRED | string | ex. submit-button
-    link_classes: "<link_classes>", // REQUIRED | string | ex. button-red
-    link_text: "<link_text>", // REQUIRED | string | ex. download pdf
-    navigation_ancestry: "<navigation_ancestry>", // recommended | string - delimited (~) | ex. about~our ceo
-    outbound: "<outbound>", // optional | boolean | ex. false
-    region_ancestry: "<region_ancestry>", // recommended | string - delimited (~) | ex. header~navigation
-    protocol: "<type>" // recommended | string | ex. http, https, mailto, tel
   }
 });
 ```
 
 ## Variable Definitions
 
-|Field|Type|Required?|Description|Example|Pattern|Min Length|Max Length|Minimum|Maximum|Multiple Of|
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-|component_ancestry|string|recommended|A delimited string showing all components in the ancestry of the link clicked|hero~product carousel|
-|file_extension|string|recommended|The file extension of the file being downloaded.|pdf|
-|file_name|string|recommended|The filename of the file being downloaded.|drug_facts.pdf|
-|identifier|string|optional|Optional field that enables you to assign this link a specific ID. Used primarily when you need to identify a link and component_ancestry, region_ancestry, link_classes, link_id, link_text, and link_url are not sufficient to do that.||
-|link_classes|string|required|The list of HTML/CSS classes applied to the link.|button-red|
-|link_text|string|required|The full text of the link.|click here|
-|link_domain|string|required|The domain of the link.|example.com|
-|link_id|string|required|The HTML/CSS ID of the link.|submit-button|
-|link_url|string|required|The full URL of the link.|https://www.example.com/form|
-|navigation_ancestry|string|recommended|A delimited string showing all navigation items in the ancestry of link clicked in a multi-tiered menu|about~our leadership~our CEO|
-|outbound|boolean|conditional|Does the link point to a different domain?|false|
-|region_ancestry|string|recommended|A delimited string showing all regions in the ancestry of the link clicked|header~navigation
-|protocol|string|recommended|The link protocol.|http, https, mailto, tel|
+|Field|Type|Required|Description|Example|Maximum Length|
+| --- | --- | --- | --- | --- | --- |
+|**identifier**|`string`|required|The wtb-event machine-readable name. This should be a unique value specific to this piece of content, if one exists. If one does not exist, this can also be populated with the same value as the <name>.|`contact`, `lead_generation`|`100`|
+|**name**|`string`|required|The wtb-event human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the event with. It should be lowercase snake_case.|`contact`, `lead_generation`|`100`|
+|**component_ancestry**|`string`|contextual|A delimited string showing all components in the ancestry of the link clicked|`hero~product carousel`|`100`|
+|**link_classes**|`string`|required|The list of HTML/CSS classes applied to the link.|`button-red`|`100`|
+|**link_id**|`string`|required|The HTML/CSS ID of the link.|`submit-button`|`100`|
+|**link_text**|`string`|required|The full text of the link.|`click here`|`100`|
+|**link_url**|`string`|required|The full URL of the link.|`https://www.example.com/form`|`100`|
+|**link_hostname**|`string`|required|The hostname of the link.|`https://www.example.com`|`100`|
+|**navigation_ancestry**|`string`|contextual|A delimited string showing all navigation items in the ancestry of link clicked in a multi-tiered menu|`about~our leadership~our CEO`|`100`|
+|**outbound**|`boolean`|contextual|Does the link point to a different domain?|`false`|`100`|
+|**region_ancestry**|`string`|contextual|A delimited string showing all regions in the ancestry of the link clicked|`header~navigation`|`100`|
+|**protocol**|`string`|required|Records the type of link that was clicked. The type here refers to what comes before the :// on the link itself. Useful for identifying http links that should be https, as well as reporting on mailto, tel, and other alternate link types|`http`, `https`, `tel`, `mailto`|`100`|
+|**file_extension**|`string`|recommended|The file extension of the file being downloaded.|`pdf`|`100`|
+|**file_name**|`string`|recommended|The filename of the file being downloaded.|`drug_facts.pdf`|`100`|
