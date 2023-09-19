@@ -10,7 +10,7 @@ Fire whenever a user successfully sets their location.
 
 // Code:
 window.dataLayer = window.dataLayer || [];
-dataLayer.push({ event_data: null, user_data: null });  // Clear the previous event_data object.
+dataLayer.push({ event_data: null});  // Clear the previous event_data object.
 dataLayer.push({
   event: "location_set_wtb"
 });
