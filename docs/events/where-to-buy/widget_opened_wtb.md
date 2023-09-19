@@ -1,3 +1,7 @@
+---
+title: Widget Opened WTB
+---
+
 # Widget Opened WTB
 
 Fire whenever a user successfully opens a WTB widget.
