@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -2617,7 +2617,7 @@
         
   
   <span class="md-ellipsis">
-    Video Progress
+    Video Complete
   </span>
   
 
@@ -2869,7 +2869,7 @@
         
   
   <span class="md-ellipsis">
-    CTA Click WTB
+    Call Click WTB
   </span>
   
 
@@ -2989,7 +2989,7 @@
         
   
   <span class="md-ellipsis">
-    Close WTB Widget
+    Widget Closed WTB
   </span>
   
 
@@ -3298,7 +3298,7 @@
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;survey_start&#39;</span><span class="p">,</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;identifier&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. cancel_subscription_flow, free_trial</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;identifier&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. cancel_subscription_flow, free_trial</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. cancel_subscription_flow, free_trial</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;type&gt;&#39;</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. survey, lead_generation</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="p">}</span>
@@ -3313,53 +3313,33 @@
 <th>Required</th>
 <th>Description</th>
 <th>Example</th>
-<th>Pattern</th>
-<th>Min Length</th>
-<th>Max Length</th>
-<th>Minimum</th>
-<th>Maximum</th>
-<th>Multiple Of</th>
+<th>Maximum Length</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>identifier</td>
-<td>string</td>
-<td>recommended</td>
+<td><strong>identifier</strong></td>
+<td><code>string</code></td>
+<td>required</td>
 <td>The survey machine-readable name. This should be a unique value specific to this survey, if one exists. If one does not exist, this can also be populated with the same value as the <code>name</code>.</td>
-<td>cancel_subscription_flow, free_trial</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>cancel_subscription_flow</code>, <code>free_trial</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>name</td>
-<td>string</td>
+<td><strong>name</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The survey human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the survey with. It should be lowercase snake_case.</td>
-<td>cancel_subscription_flow, free_trial</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>cancel_subscription_flow</code>, <code>free_trial</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>type</td>
-<td>string</td>
+<td><strong>type</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The survey type. This will act as a filtering mechanism in reporting to enable analysts to view survey droppoff funnels. It can also act as an internal aid in firing additional events if necessary. For instance, lead-generating surveys require a <code>generate_lead</code> event to be fired alongside <code>complete_survey</code>, and that could be written into the logic based upon this field.</td>
-<td>survey, lead_generation</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>survey</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
 </tr>
 </tbody>
 </table>
@@ -3369,7 +3349,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 14, 2023</span>
       
     
   </small>

@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -2608,7 +2608,7 @@
         
   
   <span class="md-ellipsis">
-    Video Progress
+    Video Complete
   </span>
   
 
@@ -2860,7 +2860,7 @@
         
   
   <span class="md-ellipsis">
-    CTA Click WTB
+    Call Click WTB
   </span>
   
 
@@ -2980,7 +2980,7 @@
         
   
   <span class="md-ellipsis">
-    Close WTB Widget
+    Widget Closed WTB
   </span>
   
 
@@ -3269,7 +3269,10 @@
 <h1 id="page-view">Page View</h1>
 <p>Fire whenever a user loads in a new page, whether that is done synchronously or asynchronously.</p>
 <p>This event should be the first pushed into the data layer on each page. Given many 3rd party scripts push events to the data layer, this event push should be placed in the page <code>&lt;head&gt;</code> and should be the first <code>&lt;script&gt;</code> tag on the page to ensure it is the first event.</p>
-<p>There is no longer a concept of virtual page view, so this event should be fired whenever a virtual page view would have been fired in the past, such as when a new screen is loaded asyncronously within an angular, react, or vue app/embed.</p>
+<details class="note" open="open">
+<summary>Page Views and Virtual Page Views are now the same in GA4</summary>
+<p>There is no longer a concept of virtual page view, so this event should be fired whenever a virtual page view would have been fired in the past, such as when a new screen is loaded asynchronously within an angular, react, or vue app/embed.</p>
+</details>
 <h2 id="javascript-code">Javascript Code</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// When:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// User loads a new page (synchronously or asynchronously)</span>
@@ -3282,7 +3285,7 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;page_view&#39;</span><span class="p">,</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nx">page_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">page_category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;category&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. sun protection</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">page_subcategory</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;page_subcategory&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. waterproof</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">page_subcategory</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;page_subcategory&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. waterproof</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nx">page_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;page_id&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. 12345</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nx">page_name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;page_name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. homepage, search results, product:sample</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nx">page_type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;page_type&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. article, blog, homepage, product</span>
@@ -3312,96 +3315,96 @@
 </thead>
 <tbody>
 <tr>
-<td>page_category</td>
-<td>string</td>
+<td><strong>page_category</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>Used for grouping pages (or screens) into categories based on their content. Most often aligns with page tags/taxonomy terms or breadcrumbs.</td>
 <td><code>sun protection</code></td>
 <td><code>100</code></td>
 </tr>
 <tr>
-<td>page_subcategory</td>
-<td>string</td>
+<td><strong>page_subcategory</strong></td>
+<td><code>string</code></td>
 <td>recommended</td>
 <td>Used for grouping pages (or screens) into subcategories based on their content. Most often aligns with page tags/taxonomy terms or breadcrumbs.</td>
 <td><code>waterproof</code></td>
 <td><code>100</code></td>
 </tr>
 <tr>
-<td>page_id</td>
-<td>string</td>
+<td><strong>page_id</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>A durable identifier for a page that will enable measurement over time despite the page URL, title, etc changing. Generally sourced from the site content management system.</td>
 <td><code>12345</code></td>
 <td><code>100</code></td>
 </tr>
 <tr>
-<td>page_name</td>
-<td>string</td>
+<td><strong>page_name</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>A unique name for this page independent of page title. Google does not tend to use custom page names, but it's a mainstay in Adobe and therefore is included here for compatibility as well as for its usefulness generally.</td>
 <td><code>homepage,search results,product:neutrogena hydro boost ge</code>l</td>
 <td><code>100</code></td>
 </tr>
 <tr>
-<td>page_type</td>
-<td>string</td>
+<td><strong>page_type</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>Used for grouping pages (or screens) into high level types.</td>
 <td><code>article,blog,homepage,product</code></td>
 <td><code>100</code></td>
 </tr>
 <tr>
-<td>site_brand</td>
-<td>string</td>
+<td><strong>site_brand</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The brand the site is associated with. <br /> <br />Please view the <a href="https://prodbitabcon.jnj.com/#/site/Consumer/views/GlobalConsumerCommercialHierarchies/ProductHierarchyMappings?:iid=2">Kenvue Internal Documentation -  Product Hierarchy Mapping</a> for additional definitions.</td>
 <td><code>neutrogena</code></td>
 <td><code>100</code></td>
 </tr>
 <tr>
-<td>site_country</td>
-<td>string</td>
+<td><strong>site_country</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The country the site is associated with.<br /><br /> You <em><strong>must</strong></em> use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO Standard ==&gt; Alpha-2-Codes</a>.</td>
 <td><code>us</code></td>
 <td><code>100</code></td>
 </tr>
 <tr>
-<td>site_franchise</td>
-<td>string</td>
+<td><strong>site_franchise</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The franchise the site is associated with. <br /> <br />Please view the <a href="https://prodbitabcon.jnj.com/#/site/Consumer/views/GlobalConsumerCommercialHierarchies/ProductHierarchyMappings?:iid=2">Kenvue Internal Documentation -  Product Hierarchy Mapping</a> for additional definitions.</td>
 <td><code>essential health, skin care &amp; self care</code></td>
 <td><code>100</code></td>
 </tr>
 <tr>
-<td>site_region</td>
-<td>string</td>
+<td><strong>site_region</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The region the site is associated with. <br /> <br />Please view the <a href="https://prodbitabcon.jnj.com/#/site/Consumer/views/GlobalConsumerCommercialHierarchies/CustomerMappings?:iid=1">Kenvue Internal Documentation - Customer Mapping</a> for additional definitions.</td>
 <td><code>EMEA</code></td>
 <td><code>100</code></td>
 </tr>
 <tr>
-<td>site_section</td>
-<td>string</td>
+<td><strong>site_section</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The section of the site that the current page resides in.</td>
 <td>products</td>
 <td>100</td>
 </tr>
 <tr>
-<td>user_login_state</td>
-<td>string</td>
+<td><strong>user_login_state</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>Set on all events with the authentication status of the visitor.</td>
 <td><code>authenticated, anonymous</code></td>
 <td><code>100</code></td>
 </tr>
 <tr>
-<td>user_id</td>
-<td>string</td>
+<td><strong>user_id</strong></td>
+<td><code>string</code></td>
 <td>contextual</td>
 <td>The id of the user currently logged in to the site, if the site offers authentication and the user is authenticated.</td>
 <td><code>123456</code></td>
@@ -3415,7 +3418,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 19, 2023</span>
       
     
   </small>

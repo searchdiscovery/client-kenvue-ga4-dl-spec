@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -2615,7 +2615,7 @@
         
   
   <span class="md-ellipsis">
-    Video Progress
+    Video Complete
   </span>
   
 
@@ -2867,7 +2867,7 @@
         
   
   <span class="md-ellipsis">
-    CTA Click WTB
+    Call Click WTB
   </span>
   
 
@@ -2987,7 +2987,7 @@
         
   
   <span class="md-ellipsis">
-    Close WTB Widget
+    Widget Closed WTB
   </span>
   
 
@@ -3282,7 +3282,11 @@
 
 <h1 id="share">Share</h1>
 <p>Fire whenever a user shares content via email or social. </p>
-<p>The parameters page_title and page_location are automatically sent along on each page view and should be able to contextualize this event without any additional information being needed.</p>
+<p>The parameters <code>page_title</code> and <code>page_location</code> are automatically sent along on each page view and should be able to contextualize this event without any additional information being needed.</p>
+<details class="info" open="open">
+<summary><code>item_</code> parameters in the below schema are NOT the same as <code>item_</code> parameters found in the <a href="../../schemas/item.md">ecommerce items</a> schmea.</summary>
+<p>The parameters found in this event are for event collection only and will not impact ecommerce-related events, dimensions, or metrics. </p>
+</details>
 <h2 id="html-data-attributes">HTML Data Attributes</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&lt;link_url&gt;&quot;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="na">data-layer-event</span><span class="o">=</span><span class="s">&quot;share&quot;</span>
@@ -3301,11 +3305,17 @@
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;share&#39;</span><span class="p">,</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">content_type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;content_type&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | type of content | ex. blog, landing, content, product, video, livestream event</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">item_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;item_id&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | product primary ID | ex. SKU CW21001 or UPC 012345678905 (12 digits)</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;method&gt;&#39;</span><span class="w"> </span><span class="c1">// REQUIRED | string | social platform | ex. email, facebook, twitter</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">});</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;identifier&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. contact, lead_generation</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. contact, lead_generation </span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">content_type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;content_type&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | type of content | ex. blog, landing, content, product, video</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">item_brand</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;item_brand&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. tylenol, zyrtec, listerine</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nx">item_id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;item_id&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. CW21001</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nx">item_name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;item_name&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. essential_foaming_cleanser </span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nx">item_upc</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;item_upc&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. 012345678905 (12 digits)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nx">link_url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;link_url&gt;&quot;</span><span class="w"> </span><span class="c1">// contextual | string | ex. https://www.example.com/?q=product#id</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;method&gt;&#39;</span><span class="w"> </span><span class="c1">// REQUIRED | string | social platform | ex. email, facebook, twitter</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">});</span>
 </code></pre></div>
 <h2 id="variable-definitions">Variable Definitions</h2>
 <table>
@@ -3326,25 +3336,12 @@
 </thead>
 <tbody>
 <tr>
-<td>content_type</td>
-<td>string</td>
+<td><strong>identifier</strong></td>
+<td><code>string</code></td>
 <td>required</td>
-<td>The type of content shared</td>
-<td>blog, content, home, landing, product, video, livestream event</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>item_id</td>
-<td>string</td>
-<td>recommended</td>
-<td>The product primary ID (SKU or UPC) if it is a product being shared</td>
-<td>123456</td>
-<td></td>
+<td>The shared content machine-readable name. This should be a unique value specific to this piece of content, if one exists. If one does not exist, this can also be populated with the same value as the <name>.</td>
+<td><code>contact</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
 <td></td>
 <td></td>
 <td></td>
@@ -3352,12 +3349,103 @@
 <td></td>
 </tr>
 <tr>
-<td>method</td>
-<td>string</td>
+<td><strong>name</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The shared content human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the event with. It should be lowercase snake_case.</td>
+<td><code>contact</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>content_type</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The type of content shared.</td>
+<td><code>blog</code>, <code>content</code>, <code>home</code>, <code>landing</code>, <code>product</code>, <code>video</code>, <code>livestream event</code></td>
+<td><code>100</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>item_brand</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The human-readable name of the brand. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify. It should be lowercase snake_case</td>
+<td><code>tylenol</code>, <code>zyrtec</code>, <code>listerine</code></td>
+<td><code>100</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>item_id</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>SKU ID of the product a customer is sharing.</td>
+<td><code>CW21001</code></td>
+<td><code>100</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>item_name</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The human-readable product name of the product a customer is sharing. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify. It should be lowercase snake_case</td>
+<td><code>essential_foaming_cleanser</code></td>
+<td><code>100</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>item_upc</strong></td>
+<td><code>string</code></td>
+<td>contextual</td>
+<td>UPC ID of the product a customer is sharing.</td>
+<td><code>012345678905</code></td>
+<td><code>100</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>link_url</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The full URL of the object.</td>
+<td><code>https://www.example.com?q=product#id</code></td>
+<td><code>100</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>method</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The platform used to share content</td>
-<td>email, facebook, twitter</td>
-<td></td>
+<td><code>email</code>, <code>facebook</code>, <code>twitter</code></td>
+<td><code>100</code></td>
 <td></td>
 <td></td>
 <td></td>
@@ -3372,7 +3460,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 19, 2023</span>
       
     
   </small>

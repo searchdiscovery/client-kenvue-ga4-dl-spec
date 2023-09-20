@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -2617,7 +2617,7 @@
         
   
   <span class="md-ellipsis">
-    Video Progress
+    Video Complete
   </span>
   
 
@@ -2869,7 +2869,7 @@
         
   
   <span class="md-ellipsis">
-    CTA Click WTB
+    Call Click WTB
   </span>
   
 
@@ -2989,7 +2989,7 @@
         
   
   <span class="md-ellipsis">
-    Close WTB Widget
+    Widget Closed WTB
   </span>
   
 
@@ -3283,7 +3283,7 @@
 
 
 <h1 id="select-tab">Select Tab</h1>
-<p>Fire whenever a user selects a an item out of a tabset that asynchronously updates the page. Do not use this for navigation menus as those should be covered by <a href="/data-attributes/menus.md">menu data attributes</a>.</p>
+<p>Fire whenever a user selects an item out of a tabset that asynchronously updates the page. Do not use this for navigation menus as those should be covered by <a href="../../../data-attributes/menus/">menu data attributes</a>.</p>
 <h2 id="html-data-attributes">HTML Data Attributes</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&lt;link_url&gt;&quot;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="na">data-layer-event</span><span class="o">=</span><span class="s">&quot;select_tab&quot;</span>
@@ -3304,9 +3304,9 @@
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;select_tab&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;identifier&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. 12345abcde12345</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;name&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. FAQs, 2</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;name&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. FAQs</span>
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">heading</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;heading&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. Are our products safe?</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;index&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | integer | ex 1, 5</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;index&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | integer | ex 1, 5</span>
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">});</span>
 </code></pre></div>
@@ -3320,65 +3320,50 @@
 <th>Description</th>
 <th>Example</th>
 <th>Pattern</th>
-<th>Min Length</th>
-<th>Max Length</th>
-<th>Minimum</th>
-<th>Maximum</th>
-<th>Multiple Of</th>
+<th>Maximum Length</th>
+<th>Minimum Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>identifier</td>
-<td>string</td>
+<td><strong>identifier</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The computer-readable machine name of the tab. Use UUID provided by the component</td>
-<td>12345abcde12345</td>
+<td><code>12345abcde12345</code></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>100</code></td>
 <td></td>
 </tr>
 <tr>
-<td>name</td>
-<td>string</td>
+<td><strong>name</strong></td>
+<td><code>string</code></td>
 <td>recommended</td>
 <td>The human-readable name of the tab. If user does not input one, populate with numerical index of which tab this is on the page (1-indexed). FAQs are the big one that currently need to be broken out in reporting, so getting a name for those should be the priority.</td>
-<td>FAQs, 2</td>
+<td><code>FAQs</code></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>100</code></td>
 <td></td>
 </tr>
 <tr>
-<td>heading</td>
-<td>string</td>
+<td><strong>heading</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The text heading of the tab item that was opened/closed</td>
-<td>"Are our products safe?"</td>
+<td><code>"Are our products safe?"</code></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>100</code></td>
 <td></td>
 </tr>
 <tr>
-<td>index</td>
-<td>integer</td>
+<td><strong>index</strong></td>
+<td><code>integer</code></td>
 <td>recommended</td>
 <td>The ordinal slot number of the tab item. E.g. - the top item in the tab will be slot 1. (1-indexed)</td>
-<td>1</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
+<td><code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code></td>
+<td><code>[0-9]+</code></td>
+<td><code>100</code></td>
+<td><code>1</code></td>
 </tr>
 </tbody>
 </table>
@@ -3388,7 +3373,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 14, 2023</span>
       
     
   </small>

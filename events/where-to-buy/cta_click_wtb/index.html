@@ -16,15 +16,15 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
-        <title>CTA Click WTB - Kenvue Marketing Analytics Data Layer Schema | GA4</title>
+        <title>Call Click WTB - Kenvue Marketing Analytics Data Layer Schema | GA4</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CTA Click WTB
+              Call Click WTB
             
           </span>
         </div>
@@ -2554,7 +2554,7 @@
         
   
   <span class="md-ellipsis">
-    Video Progress
+    Video Complete
   </span>
   
 
@@ -2817,7 +2817,7 @@
           
   
   <span class="md-ellipsis">
-    CTA Click WTB
+    Call Click WTB
   </span>
   
 
@@ -2828,7 +2828,7 @@
         
   
   <span class="md-ellipsis">
-    CTA Click WTB
+    Call Click WTB
   </span>
   
 
@@ -2989,7 +2989,7 @@
         
   
   <span class="md-ellipsis">
-    Close WTB Widget
+    Widget Closed WTB
   </span>
   
 
@@ -3283,19 +3283,29 @@
 
 
 <h1 id="cta-click-wtb">CTA Click WTB</h1>
+<p>Fire whenever a user successfully clicks on a WTB CTA link.</p>
 <p>This event will be automatically detected and fired if the data attributes below are added to each link (<code>&lt;a&gt;</code> tag if possible, but if there is no <code>&lt;a&gt;</code> tag then add them to the <code>&lt;div&gt;</code> or other tag that represents the link).</p>
+<details class="info" open="open">
+<summary><code>item_</code> parameters in the below schema are NOT the same as <code>item_</code> parameters found in the <a href="../../../schemas/item/">ecommerce items</a> schmea.</summary>
+<p>The parameters found in this event are for event collection only and will not impact ecommerce-related events, dimensions, or metrics. </p>
+</details>
 <h2 id="html-data-attributes">HTML Data Attributes</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">div</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="na">data-layer-event</span><span class="o">=</span><span class="s">&quot;cta_click_wtb&quot;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="na">data-layer-affiliation</span><span class="o">=</span><span class="s">&quot;&lt;affiliation&gt;&quot;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="na">data-layer-category</span><span class="o">=</span><span class="s">&quot;&lt;category&gt;&quot;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="na">data-layer-link_text</span><span class="o">=</span><span class="s">&quot;&lt;link_text&gt;&quot;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="na">data-layer-link_url</span><span class="o">=</span><span class="s">&quot;&lt;link_url&gt;&quot;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="na">data-layer-discount</span><span class="o">=</span><span class="s">&quot;&lt;discount&gt;&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  <span class="na">data-layer-item_id</span><span class="o">=</span><span class="s">&quot;&lt;item_id&gt;&quot;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  <span class="na">data-layer-item_name</span><span class="o">=</span><span class="s">&quot;&lt;item_name&gt;&quot;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  <span class="na">data-layer-price</span><span class="o">=</span><span class="s">&quot;&lt;price&gt;&quot;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="na">data-layer-identifier</span><span class="o">=</span><span class="s">&quot;&lt;identifier&gt;&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="na">data-layer-name</span><span class="o">=</span><span class="s">&quot;&lt;name&gt;&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="na">data-layer-affiliation</span><span class="o">=</span><span class="s">&quot;&lt;affiliation&gt;&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="na">data-layer-component_type</span><span class="o">=</span><span class="s">&quot;&lt;component_type&gt;&quot;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="na">data-layer-component_type</span><span class="o">=</span><span class="s">&quot;&lt;item_brand&gt;&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  <span class="na">data-layer-category</span><span class="o">=</span><span class="s">&quot;&lt;category&gt;&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  <span class="na">data-layer-discount</span><span class="o">=</span><span class="s">&quot;&lt;discount&gt;&quot;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  <span class="na">data-layer-item_id</span><span class="o">=</span><span class="s">&quot;&lt;item_id&gt;&quot;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  <span class="na">data-layer-item_name</span><span class="o">=</span><span class="s">&quot;&lt;item_name&gt;&quot;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  <span class="na">data-layer-link_text</span><span class="o">=</span><span class="s">&quot;&lt;link_text&gt;&quot;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  <span class="na">data-layer-link_text</span><span class="o">=</span><span class="s">&quot;&lt;item_upc&gt;&quot;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  <span class="na">data-layer-link_url</span><span class="o">=</span><span class="s">&quot;&lt;link_url&gt;&quot;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  <span class="na">data-layer-price</span><span class="o">=</span><span class="s">&quot;&lt;price&gt;&quot;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">&gt;</span>
 </code></pre></div>
 <h2 id="javascript-code">Javascript Code</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// When:</span>
@@ -3309,16 +3319,21 @@
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cta_click_wtb&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">affiliation</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;affiliation&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//recommeded | string | ex. Amazon.com, Walmart.com, CVS</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;category&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional | string | ex. find online, find locally</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nx">discount</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;discount&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// conditional | number | ex. 2.22</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nx">item_id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;item_id&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. SKU_12345</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nx">item_name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;item_name&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. jeggings</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nx">link_text</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;link_text&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. Add to Cart, Buy Now, Get Directions, store hours</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="nx">link_url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;link_url&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. https://www.example.com/link?test=testing</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;price&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. 9.99</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="p">});</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;identifier&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. contact, lead_generation</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. contact, lead_generation </span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nx">affiliation</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;affiliation&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//REQUIRED | string | ex. Amazon.com, Walmart.com, CVS</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nx">component_type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;component_type&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. pricespider, channeladvisor</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nx">item_brand</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;item_brand&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. tylenol, zyrtec, listerine</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;category&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. find online, find locally</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="nx">discount</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;discount&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | number | ex. 2.22</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nx">item_id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;item_id&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. SKU_12345</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="nx">item_name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;item_name&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. jeggings</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="nx">link_text</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;link_text&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. Add to Cart, Buy Now, Get Directions, store hours</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="nx">item_upc</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;item_upc&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. 012345678905 (12 digits)</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="nx">link_url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;link_url&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. https://www.example.com/link?test=testing</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;price&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. 9.99</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="p">});</span>
 </code></pre></div>
 <h2 id="variable-definitions">Variable Definitions</h2>
 <table>
@@ -3326,67 +3341,108 @@
 <tr>
 <th>Field</th>
 <th>Type</th>
-<th>Required?</th>
+<th>Required</th>
 <th>Description</th>
 <th>Example</th>
+<th>Maximum Length</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>affiliation</td>
-<td>string</td>
-<td>recommended</td>
-<td>A product affiliation that designates the product retailer.</td>
-<td>Amazon.com,Walmart.com,CVS</td>
+<td><strong>identifier</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The wtb-event machine-readable name. This should be a unique value specific to this piece of content, if one exists. If one does not exist, this can also be populated with the same value as the <name>.</td>
+<td><code>contact</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>category</td>
-<td>string</td>
-<td>optional</td>
+<td><strong>name</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The wtb-event human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the event with. It should be lowercase snake_case.</td>
+<td><code>contact</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><strong>affiliation</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify. It should be lowercase snake_case</td>
+<td><code>walmart</code>, <code>cvs</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><strong>component_type</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The human-readable name of the WTB Provider. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify. It should be lowercase snake_case.</td>
+<td><code>pricespider</code>, <code>channeladvisor</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><strong>item_brand</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The human-readable name of the brand. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify. It should be lowercase snake_case</td>
+<td><code>tylenol</code>, <code>zyrtec</code>, <code>listerine</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><strong>category</strong></td>
+<td><code>string</code></td>
+<td>contextual</td>
 <td>Used to differentiate buy online versus buy locally.</td>
-<td>find online,find locally</td>
+<td><code>find online,find locally</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>discount</td>
-<td>number</td>
-<td>conditional</td>
+<td><strong>discount</strong></td>
+<td><code>number</code></td>
+<td>contextual</td>
 <td>Monetary value of discount associated with a purchase.</td>
-<td>2.22</td>
+<td><code>2.22</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>item_id</td>
-<td>string</td>
+<td><strong>item_id</strong></td>
+<td><code>string</code></td>
 <td>required</td>
-<td>Item ID (context-specific).</td>
-<td>SKU_12345</td>
+<td>SKU ID of the product a customer would be calling a store about.</td>
+<td><code>CW21001</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>item_name</td>
-<td>string</td>
+<td><strong>item_name</strong></td>
+<td><code>string</code></td>
 <td>required</td>
-<td>Item Name (context-specific).</td>
-<td>jeggings</td>
+<td>The human-readable product name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify. It should be lowercase snake_case</td>
+<td><code>essential_foaming_cleanser</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>link_text</td>
-<td>string</td>
+<td><strong>item_upc</strong></td>
+<td><code>string</code></td>
+<td>contextual</td>
+<td>UPC ID of the product a customer would be calling a store about.</td>
+<td><code>012345678905</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><strong>link_url</strong></td>
+<td><code>string</code></td>
 <td>required</td>
-<td>The full text of the link if the link text represents an action (e.g. - Add to Cart, Buy Now, Get Directions, etc.). If the text of the link just represents information, send a description of the information (e.g. - for store hours of 8:00-16:00 send "store hours").</td>
-<td>Add to Cart, Buy Now, Get Directions, store hours</td>
+<td>This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify. It should be lowercase snake_case</td>
+<td><code>https://www.example.com?q=product#id</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>link_url</td>
-<td>string</td>
-<td>required</td>
-<td>The full URL of the link.</td>
-<td>https://www.example.com/link?test=testing</td>
-</tr>
-<tr>
-<td>price</td>
+<td><strong>price</strong></td>
 <td>number</td>
-<td>recommended</td>
+<td>contextual</td>
 <td>The monetary price of the item, in units of the specified currency parameter.</td>
-<td>9.99</td>
+<td><code>9.99</code></td>
+<td><code>100</code></td>
 </tr>
 </tbody>
 </table>
@@ -3396,7 +3452,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2023</span>
       
     
   </small>

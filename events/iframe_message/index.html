@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -2615,7 +2615,7 @@
         
   
   <span class="md-ellipsis">
-    Video Progress
+    Video Complete
   </span>
   
 
@@ -2867,7 +2867,7 @@
         
   
   <span class="md-ellipsis">
-    CTA Click WTB
+    Call Click WTB
   </span>
   
 
@@ -2987,7 +2987,7 @@
         
   
   <span class="md-ellipsis">
-    Close WTB Widget
+    Widget Closed WTB
   </span>
   
 
@@ -3285,11 +3285,13 @@
 <p>This will be automatically collected and fired through GTM for now, but the HTML data attributes should still be added if possible to help with identification.</p>
 <h2 id="html-data-attributes">HTML Data Attributes</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;&lt;page_location&gt;&quot;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="na">data-layer-category</span><span class="o">=</span><span class="s">&quot;&lt;category&gt;&quot;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="na">data-layer-category2</span><span class="o">=</span><span class="s">&quot;&lt;category2&gt;&quot;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="na">data-layer-identifier</span><span class="o">=</span><span class="s">&quot;&lt;identifier&gt;&quot;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="na">data-layer-name</span><span class="o">=</span><span class="s">&quot;&lt;name&gt;&quot;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="na">data-layer-identifier</span><span class="o">=</span><span class="s">&quot;&lt;identifier&gt;&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="na">data-layer-name</span><span class="o">=</span><span class="s">&quot;&lt;name&gt;&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="na">data-layer-category</span><span class="o">=</span><span class="s">&quot;&lt;category&gt;&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="na">data-layer-category2</span><span class="o">=</span><span class="s">&quot;&lt;category2&gt;&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="na">data-layer-page_hostname</span><span class="o">=</span><span class="s">&quot;&lt;page_hostname&gt;&quot;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="na">data-layer-page_location</span><span class="o">=</span><span class="s">&quot;&lt;page_location&gt;&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">&gt;</span>
 </code></pre></div>
 <h2 id="javascript-code">Javascript Code</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// When:</span>
@@ -3301,14 +3303,14 @@
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;iframe_post_message&#39;</span><span class="p">,</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;category&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. audio, where to buy, video</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">category2</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;category2&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional | string | ex. audio, where to buy, video</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;data&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | variable | ex. {event: &#39;play&#39;, videoName: &#39;my video&#39;, videoProvider: &#39;vimeo&#39;}</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">html_classes</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;classes&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional | string | ex. audio-embed</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nx">html_element</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;element&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | HTMLIFrameElement | ex. &lt;iframe src=&quot;sample.com/iframe&quot; ...&gt;</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nx">html_id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;id&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional | string | ex. hero-video</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;identifier&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional | string | ex. vidyard-video-embed</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;name&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional | string | ex. vidyard video embed</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;identifier&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. vidyard-video-embed</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;name&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. vidyard video embed</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;category&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. audio, where to buy, video</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">category2</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;category2&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. audio, where to buy, video</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;data&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | variable | ex. {event: &#39;play&#39;, videoName: &#39;my video&#39;, videoProvider: &#39;vimeo&#39;}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nx">html_id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;id&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. hero-video</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nx">html_classes</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;classes&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// contextual | string | ex. audio-embed</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nx">html_element</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;element&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | HTMLIFrameElement | ex. &lt;iframe src=&quot;sample.com/iframe&quot; ...&gt;</span>
 <a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="nx">page_hostname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;page_hostname&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. vimeo.com</span>
 <a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nx">page_location</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;page_location&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. https://www.example.com</span>
 <a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="p">}</span>
@@ -3323,144 +3325,89 @@
 <th>Required</th>
 <th>Description</th>
 <th>Example</th>
-<th>Pattern</th>
-<th>Min Length</th>
-<th>Max Length</th>
-<th>Minimum</th>
-<th>Maximum</th>
-<th>Multiple Of</th>
+<th>Maximum Length</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>category</td>
-<td>string</td>
-<td>recommended</td>
-<td>A category added to the iframe via data attributes that can be used to represent what type of component/tool/widget is embedded via the iframe</td>
-<td>audio, where to buy, video</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><strong>identifier</strong></td>
+<td><code>string</code></td>
+<td>contextual</td>
+<td>An ID added to the iframe via data attributes that can be used to identify which iframe sent the message</td>
+<td><code>vidyard-video-embed</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>category2</td>
-<td>string</td>
+<td><strong>name</strong></td>
+<td><code>string</code></td>
+<td>contextual</td>
+<td>A name added to the iframe via data attributes that can be used to identify which iframe sent the message</td>
+<td><code>vidyard video embed</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><strong>category</strong></td>
+<td><code>string</code></td>
+<td>recommended</td>
+<td>A category added to the iframe via data attributes that can be used to represent what type of component/tool/widget is embedded via the iframe</td>
+<td><code>audio</code>, <code>where to buy</code>, <code>video</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><strong>category2</strong></td>
+<td><code>string</code></td>
 <td>contextual</td>
 <td>Categories 2 - 5 can be used to further categorize the iframe</td>
 <td>audio, where to buy, video</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
-<td>data</td>
+<td><strong>data</strong></td>
 <td>variable</td>
 <td>required</td>
 <td>The data payload sent from the iframe</td>
 <td><code>{event: 'play', videoName: 'this is a video', videoProvider: 'vimeo'}</code></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
-<td>html_classes</td>
-<td>string</td>
+<td><strong>html_id</strong></td>
+<td><code>string</code></td>
+<td>contextual</td>
+<td>The iFrame HTML ID attribute.</td>
+<td><code>hero-video</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><strong>html_classes</strong></td>
+<td><code>string</code></td>
 <td>contextual</td>
 <td>The iFrame CSS classes.</td>
 <td><code>audio-embed</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>html_element</td>
+<td><strong>html_element</strong></td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement">HTMLIFrameElement</a></td>
 <td>required</td>
 <td>The iFrame HTML element.</td>
 <td><code>&lt;iframe src="neutrogena.com/iframe" ...&gt;</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>html_id</td>
-<td>string</td>
-<td>contextual</td>
-<td>The iFrame HTML ID attribute.</td>
-<td><code>hero-video</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>identifier</td>
-<td>string</td>
-<td>contextual</td>
-<td>An ID added to the iframe via data attributes that can be used to identify which iframe sent the message</td>
-<td><code>vidyard-video-embed</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>name</td>
-<td>string</td>
-<td>contextual</td>
-<td>A name added to the iframe via data attributes that can be used to identify which iframe sent the message</td>
-<td><code>vidyard video embed</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>page_hostname</td>
-<td>string</td>
+<td><strong>page_hostname</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The hostname of the iFrame source.</td>
 <td><code>vimeo.com</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>page_location</td>
-<td>string</td>
+<td><strong>page_location</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The full URL of the iFrame source.</td>
 <td><code>where-to-buy.co/example</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>100</code></td>
 </tr>
 </tbody>
 </table>
@@ -3470,7 +3417,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 19, 2023</span>
       
     
   </small>

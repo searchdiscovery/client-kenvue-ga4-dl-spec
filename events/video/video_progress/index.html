@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -2556,7 +2556,7 @@
         
   
   <span class="md-ellipsis">
-    Video Progress
+    Video Complete
   </span>
   
 
@@ -2862,7 +2862,7 @@
         
   
   <span class="md-ellipsis">
-    CTA Click WTB
+    Call Click WTB
   </span>
   
 
@@ -2982,7 +2982,7 @@
         
   
   <span class="md-ellipsis">
-    Close WTB Widget
+    Widget Closed WTB
   </span>
   
 
@@ -3280,15 +3280,18 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;video_start&#39;</span><span class="p">,</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">video_current_time</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;video_current_time&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. 15</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">video_duration</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;video_duration&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. 600</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">video_percent</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;video_percent&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. 15</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nx">video_provider</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;video_provider&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. youtube, vimeo</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nx">video_title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;video_title&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. My Video</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nx">video_url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;video_url&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | https://youtu.be/12345ABC</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nx">visible</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;visible&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | boolean | ex. true</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">});</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;identifier&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. 2023 My Video For All, 2023 Product Holiday Launch</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. 2023 My Video For All, 2023 Product Holiday Launch</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;type&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. public, internal, brand awareness, lead_generation</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nx">video_current_time</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;video_current_time&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. 15</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nx">video_duration</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;video_duration&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. 600</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nx">video_percent</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;video_percent&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. 15</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nx">video_provider</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;video_provider&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. youtube, vimeo, firework, twitch</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nx">video_title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;video_title&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. My Video</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nx">video_url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;video_url&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | https://youtu.be/12345ABC</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nx">visible</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;visible&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | boolean | ex. true</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">});</span>
 </code></pre></div>
 <h2 id="variable-definitions">Variable Definitions</h2>
 <table>
@@ -3299,105 +3302,89 @@
 <th>Required</th>
 <th>Description</th>
 <th>Example</th>
-<th>Pattern</th>
-<th>Min Length</th>
-<th>Max Length</th>
-<th>Minimum</th>
-<th>Maximum</th>
-<th>Multiple Of</th>
+<th>Maximum Length</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>video_current_time</td>
-<td>string</td>
+<td><strong>identifier</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The video livestream machine-readable name. This should be a unique value specific to this video livestream, if one exists. If one does not exist, this can also be populated with the same value as the <code>name</code>.</td>
+<td><code>2023 My Video For All</code>, <code>2023 Product Holiday Launch</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The video livestream human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the video livestream with. It should be lowercase snake_case.</td>
+<td><code>2023 My Video For All</code>, <code>2023 Product Holiday Launch</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The video livestream type. This will act as a filtering mechanism in reporting to enable analysts to view video livestream dropoff funnels. It can also act as an internal aid in firing additional events if necessary. For instance, a lead-generating video livestream requires a <code>generate_lead</code> event to be fired alongside <code>video_livestream_complete</code>, and that could be written into the logic based upon this field.</td>
+<td><code>public</code>,<code>internal</code>,<code>brand awareness</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><strong>video_current_time</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The current time of the video viewed.</td>
-<td>15</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>15</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>video_duration</td>
-<td>string</td>
+<td><strong>video_duration</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The total duration of the video.</td>
-<td>600</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>600</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>video_percent</td>
-<td>string</td>
+<td><strong>video_percent</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The current percent of the video viewed.</td>
-<td>15</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>15</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>video_provider</td>
-<td>string</td>
+<td><strong>video_provider</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The video provider.</td>
-<td>youtube, vimeo</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>youtube</code>, <code>vimeo</code>, <code>firework</code>, <code>twitch</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>video_title</td>
-<td>string</td>
+<td><strong>video_title</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The title of the video.</td>
-<td>Walkthrough of the Google Analytics 4 User Interface</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>My Video</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>video_url</td>
-<td>string</td>
+<td><strong>video_url</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The URL of the video.</td>
-<td>https://youtu.be/RhS85WQiBLU</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>https://youtu.be/RhS85WQiBLU</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>visible</td>
-<td>boolean</td>
+<td><strong>visible</strong></td>
+<td><code>boolean</code></td>
 <td>required</td>
 <td>Is the video visible on the page.</td>
-<td>true</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>true</code></td>
+<td><code>100</code></td>
 </tr>
 </tbody>
 </table>
@@ -3407,7 +3394,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2023</span>
       
     
   </small>

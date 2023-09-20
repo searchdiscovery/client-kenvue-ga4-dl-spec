@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -2610,7 +2610,7 @@
         
   
   <span class="md-ellipsis">
-    Video Progress
+    Video Complete
   </span>
   
 
@@ -2862,7 +2862,7 @@
         
   
   <span class="md-ellipsis">
-    CTA Click WTB
+    Call Click WTB
   </span>
   
 
@@ -2982,7 +2982,7 @@
         
   
   <span class="md-ellipsis">
-    Close WTB Widget
+    Widget Closed WTB
   </span>
   
 
@@ -3279,12 +3279,16 @@
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="w"> </span><span class="nx">ecommerce</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="p">});</span><span class="w">  </span><span class="c1">// Clear the previous ecommerce object.</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;add_to_cart&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">ecommerce</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">currency</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;currency&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. USD | pattern: ^[A-Z]{3}$ | min. 3| max. 3</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">items</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;items&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | array | ex. [{item_id: &quot;test&quot;}]</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;value&gt;&quot;</span><span class="w"> </span><span class="c1">// REQUIRED | number | ex. 7.77 | pattern: ^\d\.\d\d$ | min. 0.00</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">});</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;identifier&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. uniquely_created_id, skin360_pwa_ntg_atc</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;name&gt;&#39;</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. pdp_add_to_cart, skin360_pwa_ntg add_to_cart</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">},</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nx">ecommerce</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nx">currency</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;currency&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. USD | pattern: ^[A-Z]{3}$ | min. 3| max. 3</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nx">items</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;items&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | array | ex. [{item_id: &quot;test&quot;}]</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;value&gt;&quot;</span><span class="w"> </span><span class="c1">// REQUIRED | number | ex. 7.77 | pattern: ^\d\.\d\d$ | min. 0.00</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">});</span>
 </code></pre></div>
 <h2 id="variable-definitions">Variable Definitions</h2>
 <table>
@@ -3303,8 +3307,30 @@
 </thead>
 <tbody>
 <tr>
-<td>currency</td>
-<td>string</td>
+<td><strong>identifier</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The wtb-event machine-readable name. This should be a unique value specific to this piece of content, if one exists. If one does not exist, this can also be populated with the same value as the <name>.</td>
+<td><code>contact</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td><code>string</code></td>
+<td>required</td>
+<td>The wtb-event human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the event with. It should be lowercase snake_case.</td>
+<td><code>contact</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>currency</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>Currency of the items associated with the event, in 3-letter ISO 4217 format.</td>
 <td><code>USD</code></td>
@@ -3314,8 +3340,8 @@
 <td></td>
 </tr>
 <tr>
-<td>items</td>
-<td>array of <a href="../../../schemas/item/">items</a></td>
+<td><strong>items</strong></td>
+<td><code>array of [items]</code>(../../schemas/item.md)</td>
 <td>required</td>
 <td>Populate with item objects that represent the product(s) added to the cart.</td>
 <td><code>[{item_id: "test"}]</code></td>
@@ -3325,8 +3351,8 @@
 <td></td>
 </tr>
 <tr>
-<td>value</td>
-<td>number</td>
+<td><strong>value</strong></td>
+<td><code>number</code></td>
 <td>required</td>
 <td>The monetary value of the event. Does not include currency sign.</td>
 <td><code>7.77</code></td>
@@ -3343,7 +3369,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 19, 2023</span>
       
     
   </small>

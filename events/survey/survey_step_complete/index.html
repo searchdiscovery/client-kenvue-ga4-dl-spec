@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -2610,7 +2610,7 @@
         
   
   <span class="md-ellipsis">
-    Video Progress
+    Video Complete
   </span>
   
 
@@ -2862,7 +2862,7 @@
         
   
   <span class="md-ellipsis">
-    CTA Click WTB
+    Call Click WTB
   </span>
   
 
@@ -2982,7 +2982,7 @@
         
   
   <span class="md-ellipsis">
-    Close WTB Widget
+    Widget Closed WTB
   </span>
   
 
@@ -3271,7 +3271,10 @@
 <h1 id="survey-step-complete">Survey Step Complete</h1>
 <p>Fire whenever a user successfully completes a survey step/section. </p>
 <p>This event is fired when a step/section of a survey is successfully received and processed. This is in contrast to <a href="../survey_error/"><code>survey_error</code></a> which occurs when a submission is attempted but an error occurs and the survey input is not received and processed.</p>
+<div class="admonition warning">
+<p class="admonition-title">Personally Identifiable Information Avoidance</p>
 <p>It is important to note that the <code>step_choice</code> attribute which can possibly include PII (e.g. freeform input fields, first name, last name, email address, home address, etc.) should be <strong><em>EXCLUDED</em></strong> from this data layer event. For more information, please visit <a href="https://support.google.com/analytics/answer/7686480?hl=en">Understanding PII in Google's contracts and policies</a>.</p>
+</div>
 <h2 id="javascript-code">Javascript Code</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// When:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// User successfully completes a survey step/section</span>
@@ -3283,13 +3286,13 @@
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;survey_step_complete&#39;</span><span class="p">,</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nx">event_data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;identifier&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. cancel_subscription_flow, free_trial</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;identifier&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. cancel_subscription_flow, free_trial</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. cancel_subscription_flow, free_trial</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;type&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. survey, lead_generation</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nx">step_choice</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;step_choice&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | Radio buttons or select lists only | ex. Too Expensive,Using Another Product/Brand</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nx">step_choice_method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;step_choice_method&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. automatic, user-selected</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nx">step_name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;step_name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// recommended | string | ex. why_are_you_cancelling, which_product</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nx">step_number</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;step_number&gt;&#39;</span><span class="w"> </span><span class="c1">// recommended | integer | ex. 1, 2, 3</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nx">step_choice</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;step_choice&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | Radio buttons or select lists only | ex. Too Expensive,Using Another Product/Brand</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nx">step_choice_method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;step_choice_method&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. automatic, user-selected</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nx">step_name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;step_name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// REQUIRED | string | ex. why_are_you_cancelling, which_product</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nx">step_number</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;step_number&gt;&#39;</span><span class="w"> </span><span class="c1">// REQUIRED | integer | ex. 1, 2, 3,4,5</span>
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">});</span>
 </code></pre></div>
@@ -3302,105 +3305,65 @@
 <th>Required</th>
 <th>Description</th>
 <th>Example</th>
-<th>Pattern</th>
-<th>Min Length</th>
-<th>Max Length</th>
-<th>Minimum</th>
-<th>Maximum</th>
-<th>Multiple Of</th>
+<th>Maximum Length</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>identifier</td>
-<td>string</td>
-<td>recommended</td>
+<td><strong>identifier</strong></td>
+<td><code>string</code></td>
+<td>required</td>
 <td>The survey machine-readable name. This should be a unique value specific to this survey, if one exists. If one does not exist, this can also be populated with the same value as the <code>name</code>.</td>
-<td>cancel_subscription_flow, free_trial</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>cancel_subscription_flow</code>, <code>free_trial</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>name</td>
-<td>string</td>
+<td><strong>name</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The survey human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the survey with. It should be lowercase snake_case.</td>
-<td>cancel_subscription_flow, free_trial</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>cancel_subscription_flow</code>, <code>free_trial</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>type</td>
-<td>string</td>
+<td><strong>type</strong></td>
+<td><code>string</code></td>
 <td>required</td>
 <td>The survey type. This will act as a filtering mechanism in reporting to enable analysts to view survey droppoff funnels. It can also act as an internal aid in firing additional events if necessary. For instance, lead-generating surveys require a <code>generate_lead</code> event to be fired alongside <code>complete_survey</code>, and that could be written into the logic based upon this field.</td>
-<td>survey, lead_generation</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>survey</code>, <code>lead_generation</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>step_choice</td>
-<td>string</td>
-<td>recommended</td>
+<td><strong>step_choice</strong></td>
+<td><code>string</code></td>
+<td>required</td>
 <td>The human-readable, user-selected value(s) within a step/section of a survey.</td>
-<td>Too Expensive,Using Another Product/Brand</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>Too Expensive</code>,<code>Using Another Product/Brand</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>step_choice_method</td>
-<td>string</td>
-<td>recommended</td>
+<td><strong>step_choice_method</strong></td>
+<td><code>string</code></td>
+<td>required</td>
 <td>This was initially scoped for skin360 as the survey can assign you a primary skin concern or you can choose one yourself. It can be used beyond that application for any time you need additional context around the step choice.</td>
-<td>automatic,user-selected</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>automatic</code>,<code>user-selected</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>step_name</td>
-<td>string</td>
-<td>recommended</td>
+<td><strong>step_name</strong></td>
+<td><code>string</code></td>
+<td>required</td>
 <td>The human-readable name of the current step of the survey.</td>
-<td>why_are_you_cancelling,which_product</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>why_are_you_cancelling</code>,<code>which_product</code></td>
+<td><code>100</code></td>
 </tr>
 <tr>
-<td>step_number</td>
-<td>integer</td>
-<td>recommended</td>
+<td><strong>step_number</strong></td>
+<td><code>integer</code></td>
+<td>required</td>
 <td>The current step/section integer of the survey flow.</td>
-<td>1,2,3,4,5</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>1</code>,<code>2</code>,<code>3</code>,<code>4</code>,<code>5</code></td>
+<td><code>100</code></td>
 </tr>
 </tbody>
 </table>
@@ -3410,7 +3373,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 2, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 14, 2023</span>
       
     
   </small>
