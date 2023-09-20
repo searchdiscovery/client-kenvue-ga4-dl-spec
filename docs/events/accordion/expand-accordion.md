@@ -42,7 +42,7 @@ dataLayer.push({
 |Field|Type|Required|Description|Example|Minimum Length|Maximum Length|Minimum|
 | --- | --- | --- | --- | --- | --- | --- | --- |
 |identifier|string|required|The computer-readable machine name of the accordion. Use UUID provided by the component.|`12345abcde12345`||`100`|
-|name|string|required|The human-readable name of the accordion. If user does not input one, populate with numerical index of which accordion this is on the page (1-indexed). FAQs are the big one that currently need to be broken out in reporting, so getting a name for those should be the priority.|`FAQs`, `How it works`,`Ingredients`||`1001`|
+|name|string|required|The human-readable name of the accordion. If user does not input one, populate with numerical index of which accordion this is on the page (1-indexed). FAQs are the big one that currently need to be broken out in reporting, so getting a name for those should be the priority.|`FAQs`, `How it works`,`Ingredients`||`100`|
 |heading|string|required|The text heading of the accordion item that was opened/closed|`"Are our products safe?"`||`100`|
 |index|integer|contextual|The ordinal slot number of the accordion item. E.g. - the top item in the accordion will be slot 1. (1-indexed)|`1`|`1`|`100`|`1`|
 |type|integer|contextual|The type of accordion.|`FAQ`, `product`|

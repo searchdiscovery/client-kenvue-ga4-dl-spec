@@ -1,3 +1,7 @@
+---
+title: Video Livestream Complete
+---
+
 # Video Livestream Complete
 
 Fire whenever a user completes a live stream video. 
@@ -14,6 +18,9 @@ dataLayer.push({ event_data: null });  // Clear the previous event_data object.
 dataLayer.push({
   event: 'video_livestream_complete',
   event_data: {
+    identifier: '<identifier>', // REQUIRED | string | ex. 2023 My Video For All, 2023 Product Holiday Launch
+    name: '<name>', // REQUIRED | string | ex. 2023 My Video For All, 2023 Product Holiday Launch
+    type: '<type>', // REQUIRED | string | ex. public, internal, brand awareness, lead_generation
     video_current_time: '<video_current_time>', // REQUIRED | string | ex. 15
     video_duration: '<video_duration>', // REQUIRED | string | ex. 600
     video_percent: '<video_percent>', // REQUIRED | string | ex. 15
@@ -26,12 +33,15 @@ dataLayer.push({
 ```
 ## Variable Definitions
 
-|Field|Type|Required|Description|Example|Pattern|Min Length|Max Length|Minimum|Maximum|Multiple Of|
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-|video_current_time|string|required|The current time of the video viewed.|15|
-|video_duration|string|required|The total duration of the video.|600|
-|video_percent|string|required|The current percent of the video viewed.|15|
-|video_provider|string|required|The video provider.|youtube, vimeo, firework, twitch|
-|video_title|string|required|The title of the video.||
-|video_url|string|required|The URL of the video.|https://youtu.be/RhS85WQiBLU|
-|visible|boolean|required|Is the video visible on the page.|true|
+|Field|Type|Required|Description|Example|Maximum Length|
+| --- | --- | --- | --- | --- | --- |
+|**identifier**|`string`|required|The video livestream machine-readable name. This should be a unique value specific to this video livestream, if one exists. If one does not exist, this can also be populated with the same value as the `name`.|`2023 My Video For All`, `2023 Product Holiday Launch`|`100`|
+|**name**|`string`|required|The video livestream human-readable name. This should be something that an analyst without a deep knowledge of the technical implementation of the site can easily identify the video livestream with. It should be lowercase snake_case.|`2023 My Video For All`, `2023 Product Holiday Launch`|`100`|
+|**type**|`string`|required|The video livestream type. This will act as a filtering mechanism in reporting to enable analysts to view video livestream dropoff funnels. It can also act as an internal aid in firing additional events if necessary. For instance, a lead-generating video livestream requires a `generate_lead` event to be fired alongside `video_livestream_complete`, and that could be written into the logic based upon this field.|`public`,`internal`,`brand awareness`, `lead_generation`|`100`|
+|**video_current_time**|`string`|required|The current time of the video viewed.|`15`|`100`|
+|**video_duration**|`string`|required|The total duration of the video.|`600`|`100`|
+|**video_percent**|`string`|required|The current percent of the video viewed.|`15`|`100`|
+|**video_provider**|`string`|required|The video provider.|`youtube`, `vimeo`, `firework`, `twitch`|`100`|
+|**video_title**|`string`|required|The title of the video.|`My Video`|`100`|
+|**video_url**|`string`|required|The URL of the video.|`https://youtu.be/RhS85WQiBLU`|`100`|
+|**visible**|`boolean`|required|Is the video visible on the page.|`true`|`100`|
