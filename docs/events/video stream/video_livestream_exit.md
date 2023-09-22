@@ -18,7 +18,6 @@ dataLayer.push({ event_data: null });  // Clear the previous event_data object.
 dataLayer.push({
   event: 'video_livestream_exit',
   event_data: {
-  event_data: {
     identifier: '<identifier>', // REQUIRED | string | ex. 2023 My Video For All, 2023 Product Holiday Launch
     name: '<name>', // REQUIRED | string | ex. 2023 My Video For All, 2023 Product Holiday Launch
     type: '<type>', // REQUIRED | string | ex. public, internal, brand awareness, lead_generation
